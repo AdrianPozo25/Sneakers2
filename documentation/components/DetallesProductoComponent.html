@@ -1,0 +1,1586 @@
+<!doctype html>
+<html class="no-js" lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>sneakers2 documentation</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="icon" type="image/x-icon" href="../images/favicon.ico">
+	   <link rel="stylesheet" href="../styles/style.css">
+        <link rel="stylesheet" href="../styles/dark.css">
+    </head>
+    <body>
+          <script>
+               // Blocking script to avoid flickering dark mode
+               // Dark mode toggle button
+               var useDark = window.matchMedia('(prefers-color-scheme: dark)');
+               var darkModeState = useDark.matches;
+               var $darkModeToggleSwitchers = document.querySelectorAll('.dark-mode-switch input');
+               var $darkModeToggles = document.querySelectorAll('.dark-mode-switch');
+               var darkModeStateLocal = localStorage.getItem('compodoc_darkmode-state');
+
+               function checkToggle(check) {
+                    for (var i = 0; i < $darkModeToggleSwitchers.length; i++) {
+                         $darkModeToggleSwitchers[i].checked = check;
+                    }
+               }
+
+               function toggleDarkMode(state) {
+                    if (window.localStorage) {
+                         localStorage.setItem('compodoc_darkmode-state', state);
+                    }
+
+                    checkToggle(state);
+
+                    const hasClass = document.body.classList.contains('dark');
+
+                    if (state) {
+                         for (var i = 0; i < $darkModeToggles.length; i++) {
+                              $darkModeToggles[i].classList.add('dark');
+                         }
+                         if (!hasClass) {
+                              document.body.classList.add('dark');
+                         }
+                    } else {
+                         for (var i = 0; i < $darkModeToggles.length; i++) {
+                              $darkModeToggles[i].classList.remove('dark');
+                         }
+                         if (hasClass) {
+                              document.body.classList.remove('dark');
+                         }
+                    }
+               }
+
+               useDark.addEventListener('change', function (evt) {
+                    toggleDarkMode(evt.matches);
+               });
+               if (darkModeStateLocal) {
+                    darkModeState = darkModeStateLocal === 'true';
+               }
+               toggleDarkMode(darkModeState);
+          </script>
+
+        <div class="navbar navbar-default navbar-fixed-top d-md-none p-0">
+               <div class="d-flex">
+                    <a href="../" class="navbar-brand">sneakers2 documentation</a>
+                    <button type="button" class="btn btn-default btn-menu ion-ios-menu" id="btn-menu"></button>
+               </div>
+        </div>
+
+        <div class="xs-menu menu" id="mobile-menu">
+                <div id="book-search-input" role="search"><input type="text" placeholder="Type to search"></div>            <compodoc-menu></compodoc-menu>
+        </div>
+
+        <div class="container-fluid main">
+           <div class="row main">
+               <div class="d-none d-md-block menu">
+                   <compodoc-menu mode="normal"></compodoc-menu>
+               </div>
+               <!-- START CONTENT -->
+               <div class="content component">
+                   <div class="content-data">
+
+
+
+
+<ol class="breadcrumb">
+  <li class="breadcrumb-item">Components</li>
+  <li class="breadcrumb-item"
+  >
+  DetallesProductoComponent</li>
+</ol>
+
+<ul class="nav nav-tabs" role="tablist">
+        <li class="nav-item">
+            <a href="#info" class="nav-link active"
+                role="tab" id="info-tab" data-bs-toggle="tab" data-link="info">Info</a>
+        </li>
+        <li class="nav-item">
+            <a href="#source" class="nav-link"
+                role="tab" id="source-tab" data-bs-toggle="tab" data-link="source">Source</a>
+        </li>
+        <li class="nav-item">
+            <a href="#templateData" class="nav-link"
+                role="tab" id="templateData-tab" data-bs-toggle="tab" data-link="template">Template</a>
+        </li>
+        <li class="nav-item">
+            <a href="#styleData" class="nav-link"
+                role="tab" id="styleData-tab" data-bs-toggle="tab" data-link="style">Styles</a>
+        </li>
+        <li class="nav-item">
+            <a href="#tree" class="nav-link"
+                role="tab" id="tree-tab" data-bs-toggle="tab" data-link="dom-tree">DOM Tree</a>
+        </li>
+</ul>
+
+<div class="tab-content">
+    <div class="tab-pane fade active in" id="info"><p class="comment">
+    <h3>File</h3>
+</p>
+<p class="comment">
+    <code>src/app/pages/detalles-producto/detalles-producto.component.ts</code>
+</p>
+
+
+
+
+    <p class="comment">
+        <h3>Implements</h3>
+    </p>
+    <p class="comment">
+                <code>OnInit</code>
+    </p>
+
+
+<section data-compodoc="block-metadata">
+    <h3>Metadata</h3>
+    <table class="table table-sm table-hover metadata">
+        <tbody>
+
+
+
+
+
+
+
+
+
+
+
+
+            <tr>
+                <td class="col-md-3">selector</td>
+                <td class="col-md-9"><code>app-detalles-producto</code></td>
+            </tr>
+
+
+
+            <tr>
+                <td class="col-md-3">styleUrls</td>
+                <td class="col-md-9"><code>./detalles-producto.component.css</code></td>
+            </tr>
+
+
+
+            <tr>
+                <td class="col-md-3">templateUrl</td>
+                <td class="col-md-9"><code>./detalles-producto.component.html</code></td>
+            </tr>
+
+
+
+
+
+
+
+
+        </tbody>
+    </table>
+</section>
+
+    <section data-compodoc="block-index">
+    <h3 id="index">Index</h3>
+    <table class="table table-sm table-bordered index-table">
+        <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Properties</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                <a href="#autoSlide" >autoSlide</a>
+                            </li>
+                            <li>
+                                <a href="#descripcion" >descripcion</a>
+                            </li>
+                            <li>
+                                <a href="#imagenActualIndex" >imagenActualIndex</a>
+                            </li>
+                            <li>
+                                <a href="#producto" >producto</a>
+                            </li>
+                            <li>
+                                <a href="#productos" >productos</a>
+                            </li>
+                            <li>
+                                <a href="#transicionActiva" >transicionActiva</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Methods</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                <a href="#agregarACesta" >agregarACesta</a>
+                            </li>
+                            <li>
+                                <a href="#cambiarImagen" >cambiarImagen</a>
+                            </li>
+                            <li>
+                                <a href="#iniciarAutoSlide" >iniciarAutoSlide</a>
+                            </li>
+                            <li>
+                                <a href="#ngOnInit" >ngOnInit</a>
+                            </li>
+                            <li>
+                                <a href="#reiniciarAutoSlide" >reiniciarAutoSlide</a>
+                            </li>
+                            <li>
+                                <a href="#seleccionarImagen" >seleccionarImagen</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+
+
+
+
+        </tbody>
+    </table>
+</section>
+
+    <section data-compodoc="block-constructor">
+    <h3 id="constructor">Constructor</h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+<code>constructor(route: ActivatedRoute, cestaService: <a href="../injectables/CestaService.html" target="_self">CestaService</a>, productDescriptionService: <a href="../injectables/ProductDescriptionService.html" target="_self">ProductDescriptionService</a>)</code>
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="185" class="link-to-prism">src/app/pages/detalles-producto/detalles-producto.component.ts:185</a></div>
+                            </td>
+                        </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                            <div>
+                                    <b>Parameters :</b>
+                                    <table class="params">
+                                        <thead>
+                                            <tr>
+                                                <td>Name</td>
+                                                    <td>Type</td>
+                                                <td>Optional</td>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                                <tr>
+                                                        <td>route</td>
+                                                  
+                                                        <td>
+                                                                    <code>ActivatedRoute</code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>cestaService</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="../injectables/CestaService.html" target="_self" >CestaService</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>productDescriptionService</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="../injectables/ProductDescriptionService.html" target="_self" >ProductDescriptionService</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                        </tbody>
+                                    </table>
+                            </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+</section>
+
+
+
+
+
+    <section data-compodoc="block-methods">
+    
+    <h3 id="methods">
+        Methods
+    </h3>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="agregarACesta"></a>
+                    <span class="name">
+                        <span ><b>agregarACesta</b></span>
+                        <a href="#agregarACesta"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>agregarACesta()</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="252"
+                                    class="link-to-prism">src/app/pages/detalles-producto/detalles-producto.component.ts:252</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="cambiarImagen"></a>
+                    <span class="name">
+                        <span ><b>cambiarImagen</b></span>
+                        <a href="#cambiarImagen"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>cambiarImagen(direccion: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank">number</a>)</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="216"
+                                    class="link-to-prism">src/app/pages/detalles-producto/detalles-producto.component.ts:216</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                                <td>Type</td>
+                                            <td>Optional</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>direccion</td>
+                                            <td>
+                                                            <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                            <div class="io-description">
+                                
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="iniciarAutoSlide"></a>
+                    <span class="name">
+                        <span ><b>iniciarAutoSlide</b></span>
+                        <a href="#iniciarAutoSlide"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>iniciarAutoSlide()</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="239"
+                                    class="link-to-prism">src/app/pages/detalles-producto/detalles-producto.component.ts:239</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="ngOnInit"></a>
+                    <span class="name">
+                        <span ><b>ngOnInit</b></span>
+                        <a href="#ngOnInit"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>ngOnInit()</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="193"
+                                    class="link-to-prism">src/app/pages/detalles-producto/detalles-producto.component.ts:193</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="reiniciarAutoSlide"></a>
+                    <span class="name">
+                        <span ><b>reiniciarAutoSlide</b></span>
+                        <a href="#reiniciarAutoSlide"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>reiniciarAutoSlide()</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="246"
+                                    class="link-to-prism">src/app/pages/detalles-producto/detalles-producto.component.ts:246</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="seleccionarImagen"></a>
+                    <span class="name">
+                        <span ><b>seleccionarImagen</b></span>
+                        <a href="#seleccionarImagen"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>seleccionarImagen(index: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank">number</a>)</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="228"
+                                    class="link-to-prism">src/app/pages/detalles-producto/detalles-producto.component.ts:228</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                                <td>Type</td>
+                                            <td>Optional</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>index</td>
+                                            <td>
+                                                            <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                            <div class="io-description">
+                                
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</section>
+    <section data-compodoc="block-properties">
+    
+    <h3 id="inputs">
+        Properties
+    </h3>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="autoSlide"></a>
+                    <span class="name">
+                        <span ><b>autoSlide</b></span>
+                        <a href="#autoSlide"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="21" class="link-to-prism">src/app/pages/detalles-producto/detalles-producto.component.ts:21</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="descripcion"></a>
+                    <span class="name">
+                        <span ><b>descripcion</b></span>
+                        <a href="#descripcion"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>&#x27;Cargando descripción...&#x27;</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="22" class="link-to-prism">src/app/pages/detalles-producto/detalles-producto.component.ts:22</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="imagenActualIndex"></a>
+                    <span class="name">
+                        <span ><b>imagenActualIndex</b></span>
+                        <a href="#imagenActualIndex"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>0</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="19" class="link-to-prism">src/app/pages/detalles-producto/detalles-producto.component.ts:19</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="producto"></a>
+                    <span class="name">
+                        <span ><b>producto</b></span>
+                        <a href="#producto"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="18" class="link-to-prism">src/app/pages/detalles-producto/detalles-producto.component.ts:18</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="productos"></a>
+                    <span class="name">
+                        <span ><b>productos</b></span>
+                        <a href="#productos"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>    <code>[]</code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>[
+    {
+      id: 1, 
+      nombre: &#x27;Jordan 1 Retro High OG&#x27;, 
+      precio: 539.99, 
+      talla: &#x27;42&#x27;, 
+      color: &#x27;Marrón/Negro&#x27;,
+      imagenes: [&#x27;image/travisfondoblanco.jpg&#x27;, &#x27;image/travisfondoblanco2.jpg&#x27;],
+    },
+    {
+      id: 2, 
+      nombre: &#x27;Asics Kayano 14&#x27;, 
+      precio: 159.99, 
+      talla: &#x27;44&#x27;, 
+      color: &#x27;Blanco/Azul&#x27;,
+      imagenes: [&#x27;image/kayano14.jpg&#x27;, &#x27;image/kayano142.jpg&#x27;],
+    },
+    {
+      id: 3, 
+      nombre: &#x27;Maison Mihara Yasuhiro&#x27;, 
+      precio: 249.99, 
+      talla: &#x27;43&#x27;, 
+      color: &#x27;Negro/Blanco&#x27;,
+      imagenes: [&#x27;image/maison.png&#x27;, &#x27;image/maison2.png&#x27;],
+    },
+    {
+      id: 4, 
+      nombre: &#x27;Yeezy Foam Runner&#x27;, 
+      precio: 59.99, 
+      talla: &#x27;42&#x27;, 
+      color: &#x27;Arena&#x27;,
+      imagenes: [&#x27;image/yeezyfoamrunner.jpg&#x27;, &#x27;image/yeezyfoamrunner2.jpg&#x27;],
+    },
+    { id: 5, 
+      nombre: &#x27;Nike Dunk Low Panda&#x27;, 
+      precio: 149.99, 
+      talla: &#x27;42&#x27;, 
+      color: &#x27;Blanco/Negro&#x27;,
+      imagenes: [&#x27;image/panda1.png&#x27;, &#x27;image/panda2.png&#x27;] 
+    },
+
+    { id: 6, 
+      nombre: &#x27;New Balance 1906R&#x27;, 
+      precio: 129.99, 
+      talla: &#x27;42&#x27;, 
+      color: &#x27;Gris/Blanco&#x27;,
+      imagenes: [&#x27;image/nb1906.jpg&#x27;, &#x27;image/nb19062.jpg&#x27;] },
+
+    { id: 7, 
+      nombre: &#x27;Air Max 95 x Corteiz&#x27;, 
+      precio: 179.99, 
+      talla: &#x27;42&#x27;, 
+      color: &#x27;Negro/Azul&#x27;,
+      imagenes: [&#x27;image/corteizblue.jpg&#x27;, &#x27;image/corteizblue2.jpg&#x27;] },
+
+    { id: 8, nombre: &#x27;Dior B30&#x27;, 
+      precio: 899.99, 
+      talla: &#x27;42&#x27;, 
+      color: &#x27;Negro/Plata&#x27;,
+      imagenes: [&#x27;image/b30black.jpg&#x27;, &#x27;image/b30black2.jpg&#x27;] },
+
+    { id: 9, 
+      nombre: &#x27;Adidas Samba OG&#x27;, 
+      precio: 109.99, 
+      talla: &#x27;42&#x27;, 
+      color: &#x27;Blanco/Negro&#x27;,
+      imagenes: [&#x27;image/samba.webp&#x27;, &#x27;image/samba2.webp&#x27;] },
+
+    { id: 10, 
+      nombre: &#x27;Salomon XT-6&#x27;, 
+      precio: 169.99, 
+      talla: &#x27;42&#x27;, 
+      color: &#x27;Gris/Negro&#x27;,
+      imagenes: [&#x27;image/salomon.jpg&#x27;, &#x27;image/salomon2.jpg&#x27;] },
+
+    { id: 11, 
+      nombre: &#x27;Puma MB.02 Lamelo Ball&#x27;, 
+      precio: 79.99, 
+      talla: &#x27;42&#x27;, 
+      color: &#x27;Rosa/Negro&#x27;,
+      imagenes: [&#x27;image/melo.webp&#x27;, &#x27;image/melo2.webp&#x27;] },
+
+    { id: 12, 
+      nombre: &#x27;Converse Chuck 70 CDG&#x27;, 
+      precio: 189.99, 
+      talla: &#x27;42&#x27;, 
+      color: &#x27;Azul/Negro&#x27;,
+      imagenes: [&#x27;image/cdg.webp&#x27;, &#x27;image/cdg2.webp&#x27;] },
+
+      { 
+        id: 13, 
+        nombre: &#x27;Balenciaga Track&#x27;, 
+        precio: 899.99, 
+        talla: &#x27;42&#x27;, 
+        color: &#x27;Negro&#x27;, 
+        imagenes: [&#x27;image/balen.jpg&#x27;, &#x27;image/balen2.jpg&#x27;] 
+      },
+      
+      { 
+        id: 14, 
+        nombre: &#x27;Nike Air Force 1&#x27;, 
+        precio: 119.99, 
+        talla: &#x27;42&#x27;, 
+        color: &#x27;Blanco&#x27;, 
+        imagenes: [&#x27;image/af1.jpg&#x27;, &#x27;image/af12.jpg&#x27;] 
+      },
+      
+      { 
+        id: 15, 
+        nombre: &#x27;Jordan 4 Retro&#x27;, 
+        precio: 299.99, 
+        talla: &#x27;42&#x27;, 
+        color: &#x27;Blanco/Verde&#x27;, 
+        imagenes: [&#x27;image/j4.avif&#x27;, &#x27;image/j42.avif&#x27;] 
+      },
+      
+      { 
+        id: 16, 
+        nombre: &#x27;Vans Old Skool x Fear of God&#x27;, 
+        precio: 75.99, 
+        talla: &#x27;42&#x27;, 
+        color: &#x27;Blanco/Negro&#x27;, 
+        imagenes: [&#x27;image/vans.webp&#x27;, &#x27;image/vans2.webp&#x27;] 
+      },
+      
+      { 
+        id: 17, 
+        nombre: &#x27;Nike Blazer Mid 77&#x27;, 
+        precio: 119.99, 
+        talla: &#x27;42&#x27;, 
+        color: &#x27;Blanco/Gris&#x27;, 
+        imagenes: [&#x27;image/blaz.avif&#x27;, &#x27;image/blaz2.avif&#x27;] 
+      },
+      
+      { 
+        id: 18, 
+        nombre: &#x27;Off-White x Nike Dunk&#x27;, 
+        precio: 650.00, 
+        talla: &#x27;42&#x27;, 
+        color: &#x27;Gris/Naranja&#x27;, 
+        imagenes: [&#x27;image/off.jpg&#x27;, &#x27;image/off2.jpg&#x27;] 
+      },
+      
+      { 
+        id: 19, 
+        nombre: &#x27;New Balance 990 V5&#x27;, 
+        precio: 199.99, 
+        talla: &#x27;42&#x27;, 
+        color: &#x27;Gris&#x27;, 
+        imagenes: [&#x27;image/nb990.avif&#x27;, &#x27;image/nb9902.avif&#x27;] 
+      },
+
+      { 
+        id: 20, 
+        nombre: &#x27;Rick Owens Jumbo&#x27;, 
+        precio: 999.99, 
+        talla: &#x27;42&#x27;, 
+        color: &#x27;Negro/Blanco&#x27;, 
+        imagenes: [&#x27;image/ro.jpg&#x27;, &#x27;image/ro2.jpg&#x27;] 
+      }
+]</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="25" class="link-to-prism">src/app/pages/detalles-producto/detalles-producto.component.ts:25</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="transicionActiva"></a>
+                    <span class="name">
+                        <span ><b>transicionActiva</b></span>
+                        <a href="#transicionActiva"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank" >boolean</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>false</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="20" class="link-to-prism">src/app/pages/detalles-producto/detalles-producto.component.ts:20</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+</section>
+
+</div>
+
+
+    <div class="tab-pane fade  tab-source-code" id="source">
+        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Component, OnInit } from &#x27;@angular/core&#x27;;
+import { ActivatedRoute } from &#x27;@angular/router&#x27;;
+import { CestaService } from &#x27;../../services/cesta.servicio/cesta.service&#x27;; 
+import { CommonModule } from &#x27;@angular/common&#x27;;
+import Swal from &#x27;sweetalert2&#x27;;
+import { ProductDescriptionService } from &#x27;../../services/product-description.service&#x27;; 
+
+
+
+
+@Component({
+  selector: &#x27;app-detalles-producto&#x27;,
+  standalone: false,
+  templateUrl: &#x27;./detalles-producto.component.html&#x27;,
+  styleUrls: [&#x27;./detalles-producto.component.css&#x27;]
+})
+export class DetallesProductoComponent implements OnInit {
+  producto: any; // Variable para almacenar los detalles del producto seleccionado
+  imagenActualIndex: number &#x3D; 0; // Índice de la imagen actual en el carrusel
+  transicionActiva: boolean &#x3D; false; // Variable para controlar la animación de transición
+  autoSlide: any; // Intervalo para el auto-slide de imágenes
+  descripcion: string &#x3D; &#x27;Cargando descripción...&#x27;; // Mensaje de carga para la descripción del producto
+
+
+  productos &#x3D; [
+    {
+      id: 1, 
+      nombre: &#x27;Jordan 1 Retro High OG&#x27;, 
+      precio: 539.99, 
+      talla: &#x27;42&#x27;, 
+      color: &#x27;Marrón/Negro&#x27;,
+      imagenes: [&#x27;image/travisfondoblanco.jpg&#x27;, &#x27;image/travisfondoblanco2.jpg&#x27;],
+    },
+    {
+      id: 2, 
+      nombre: &#x27;Asics Kayano 14&#x27;, 
+      precio: 159.99, 
+      talla: &#x27;44&#x27;, 
+      color: &#x27;Blanco/Azul&#x27;,
+      imagenes: [&#x27;image/kayano14.jpg&#x27;, &#x27;image/kayano142.jpg&#x27;],
+    },
+    {
+      id: 3, 
+      nombre: &#x27;Maison Mihara Yasuhiro&#x27;, 
+      precio: 249.99, 
+      talla: &#x27;43&#x27;, 
+      color: &#x27;Negro/Blanco&#x27;,
+      imagenes: [&#x27;image/maison.png&#x27;, &#x27;image/maison2.png&#x27;],
+    },
+    {
+      id: 4, 
+      nombre: &#x27;Yeezy Foam Runner&#x27;, 
+      precio: 59.99, 
+      talla: &#x27;42&#x27;, 
+      color: &#x27;Arena&#x27;,
+      imagenes: [&#x27;image/yeezyfoamrunner.jpg&#x27;, &#x27;image/yeezyfoamrunner2.jpg&#x27;],
+    },
+    { id: 5, 
+      nombre: &#x27;Nike Dunk Low Panda&#x27;, 
+      precio: 149.99, 
+      talla: &#x27;42&#x27;, 
+      color: &#x27;Blanco/Negro&#x27;,
+      imagenes: [&#x27;image/panda1.png&#x27;, &#x27;image/panda2.png&#x27;] 
+    },
+
+    { id: 6, 
+      nombre: &#x27;New Balance 1906R&#x27;, 
+      precio: 129.99, 
+      talla: &#x27;42&#x27;, 
+      color: &#x27;Gris/Blanco&#x27;,
+      imagenes: [&#x27;image/nb1906.jpg&#x27;, &#x27;image/nb19062.jpg&#x27;] },
+
+    { id: 7, 
+      nombre: &#x27;Air Max 95 x Corteiz&#x27;, 
+      precio: 179.99, 
+      talla: &#x27;42&#x27;, 
+      color: &#x27;Negro/Azul&#x27;,
+      imagenes: [&#x27;image/corteizblue.jpg&#x27;, &#x27;image/corteizblue2.jpg&#x27;] },
+
+    { id: 8, nombre: &#x27;Dior B30&#x27;, 
+      precio: 899.99, 
+      talla: &#x27;42&#x27;, 
+      color: &#x27;Negro/Plata&#x27;,
+      imagenes: [&#x27;image/b30black.jpg&#x27;, &#x27;image/b30black2.jpg&#x27;] },
+
+    { id: 9, 
+      nombre: &#x27;Adidas Samba OG&#x27;, 
+      precio: 109.99, 
+      talla: &#x27;42&#x27;, 
+      color: &#x27;Blanco/Negro&#x27;,
+      imagenes: [&#x27;image/samba.webp&#x27;, &#x27;image/samba2.webp&#x27;] },
+
+    { id: 10, 
+      nombre: &#x27;Salomon XT-6&#x27;, 
+      precio: 169.99, 
+      talla: &#x27;42&#x27;, 
+      color: &#x27;Gris/Negro&#x27;,
+      imagenes: [&#x27;image/salomon.jpg&#x27;, &#x27;image/salomon2.jpg&#x27;] },
+
+    { id: 11, 
+      nombre: &#x27;Puma MB.02 Lamelo Ball&#x27;, 
+      precio: 79.99, 
+      talla: &#x27;42&#x27;, 
+      color: &#x27;Rosa/Negro&#x27;,
+      imagenes: [&#x27;image/melo.webp&#x27;, &#x27;image/melo2.webp&#x27;] },
+
+    { id: 12, 
+      nombre: &#x27;Converse Chuck 70 CDG&#x27;, 
+      precio: 189.99, 
+      talla: &#x27;42&#x27;, 
+      color: &#x27;Azul/Negro&#x27;,
+      imagenes: [&#x27;image/cdg.webp&#x27;, &#x27;image/cdg2.webp&#x27;] },
+
+      { 
+        id: 13, 
+        nombre: &#x27;Balenciaga Track&#x27;, 
+        precio: 899.99, 
+        talla: &#x27;42&#x27;, 
+        color: &#x27;Negro&#x27;, 
+        imagenes: [&#x27;image/balen.jpg&#x27;, &#x27;image/balen2.jpg&#x27;] 
+      },
+      
+      { 
+        id: 14, 
+        nombre: &#x27;Nike Air Force 1&#x27;, 
+        precio: 119.99, 
+        talla: &#x27;42&#x27;, 
+        color: &#x27;Blanco&#x27;, 
+        imagenes: [&#x27;image/af1.jpg&#x27;, &#x27;image/af12.jpg&#x27;] 
+      },
+      
+      { 
+        id: 15, 
+        nombre: &#x27;Jordan 4 Retro&#x27;, 
+        precio: 299.99, 
+        talla: &#x27;42&#x27;, 
+        color: &#x27;Blanco/Verde&#x27;, 
+        imagenes: [&#x27;image/j4.avif&#x27;, &#x27;image/j42.avif&#x27;] 
+      },
+      
+      { 
+        id: 16, 
+        nombre: &#x27;Vans Old Skool x Fear of God&#x27;, 
+        precio: 75.99, 
+        talla: &#x27;42&#x27;, 
+        color: &#x27;Blanco/Negro&#x27;, 
+        imagenes: [&#x27;image/vans.webp&#x27;, &#x27;image/vans2.webp&#x27;] 
+      },
+      
+      { 
+        id: 17, 
+        nombre: &#x27;Nike Blazer Mid 77&#x27;, 
+        precio: 119.99, 
+        talla: &#x27;42&#x27;, 
+        color: &#x27;Blanco/Gris&#x27;, 
+        imagenes: [&#x27;image/blaz.avif&#x27;, &#x27;image/blaz2.avif&#x27;] 
+      },
+      
+      { 
+        id: 18, 
+        nombre: &#x27;Off-White x Nike Dunk&#x27;, 
+        precio: 650.00, 
+        talla: &#x27;42&#x27;, 
+        color: &#x27;Gris/Naranja&#x27;, 
+        imagenes: [&#x27;image/off.jpg&#x27;, &#x27;image/off2.jpg&#x27;] 
+      },
+      
+      { 
+        id: 19, 
+        nombre: &#x27;New Balance 990 V5&#x27;, 
+        precio: 199.99, 
+        talla: &#x27;42&#x27;, 
+        color: &#x27;Gris&#x27;, 
+        imagenes: [&#x27;image/nb990.avif&#x27;, &#x27;image/nb9902.avif&#x27;] 
+      },
+
+      { 
+        id: 20, 
+        nombre: &#x27;Rick Owens Jumbo&#x27;, 
+        precio: 999.99, 
+        talla: &#x27;42&#x27;, 
+        color: &#x27;Negro/Blanco&#x27;, 
+        imagenes: [&#x27;image/ro.jpg&#x27;, &#x27;image/ro2.jpg&#x27;] 
+      }
+];
+
+constructor(
+  private route: ActivatedRoute, // Para obtener el ID del producto desde la URL
+  private cestaService: CestaService, // Servicio para gestionar la cesta de compras
+  private productDescriptionService: ProductDescriptionService // Servicio para obtener la descripción del producto
+) {} 
+
+ngOnInit(): void {
+  const id &#x3D; Number(this.route.snapshot.paramMap.get(&#x27;id&#x27;)); // Obtener el ID del producto desde la URL
+  this.producto &#x3D; this.productos.find(prod &#x3D;&gt; prod.id &#x3D;&#x3D;&#x3D; id); // Buscar el producto en la lista
+  if (!this.producto) return; // Si no se encuentra, salir
+
+  // Obtener la descripción del producto desde una API simulada (Fake API)
+  this.productDescriptionService.obtenerDescripcionProducto(id).subscribe(
+    (data) &#x3D;&gt; {
+      this.descripcion &#x3D; data.descripcion || &#x27;Descripción no disponible.&#x27;; // Asignar la descripción recibida
+    },
+    (error) &#x3D;&gt; {
+      console.error(&#x27;Error al obtener la descripción:&#x27;, error);
+      this.descripcion &#x3D; &#x27;No se pudo obtener la descripción.&#x27;; // Mensaje de error en caso de fallo
+    }
+  );
+
+  // Iniciar el auto-slide si el producto tiene más de una imagen
+  if (this.producto.imagenes.length &gt; 1) {
+    this.iniciarAutoSlide();
+  }
+}
+
+// Método para cambiar la imagen en el carrusel
+cambiarImagen(direccion: number) {
+  this.transicionActiva &#x3D; true;
+  setTimeout(() &#x3D;&gt; {
+    const totalImagenes &#x3D; this.producto.imagenes.length;
+    this.imagenActualIndex &#x3D; (this.imagenActualIndex + direccion + totalImagenes) % totalImagenes; // Cambio cíclico de imágenes
+    this.transicionActiva &#x3D; false;
+  }, 300); 
+  
+  this.reiniciarAutoSlide(); // Reiniciar el auto-slide tras cambiar de imagen manualmente
+}
+
+// Método para seleccionar directamente una imagen del carrusel
+seleccionarImagen(index: number) {
+  this.transicionActiva &#x3D; true;
+  setTimeout(() &#x3D;&gt; {
+    this.imagenActualIndex &#x3D; index;
+    this.transicionActiva &#x3D; false;
+  }, 300);
+
+  this.reiniciarAutoSlide(); // Reiniciar el auto-slide tras selección manual
+}
+
+// Iniciar el auto-slide de imágenes
+iniciarAutoSlide() {
+  this.autoSlide &#x3D; setInterval(() &#x3D;&gt; {
+    this.cambiarImagen(1); // Cambiar automáticamente cada 4 segundos
+  }, 4000);
+}
+
+// Reiniciar el auto-slide tras interacción del usuario
+reiniciarAutoSlide() {
+  clearInterval(this.autoSlide);
+  setTimeout(() &#x3D;&gt; this.iniciarAutoSlide(), 5000); // Reiniciar después de 5 segundos de inactividad
+}
+
+// Método para añadir el producto a la cesta de compras
+agregarACesta() {
+  this.cestaService.agregarProducto(this.producto); // Llamar al servicio de la cesta
+  console.log(&#x27;Producto añadido a la cesta:&#x27;, this.producto);
+
+  // Mostrar notificación con SweetAlert2
+  Swal.fire({
+    icon: &#x27;success&#x27;,
+    title: &#x27;¡Añadido!&#x27;,
+    text: &#x27;El producto ha sido añadido a tu cesta.&#x27;,
+    confirmButtonColor: &#x27;#d97e42&#x27;,
+    confirmButtonText: &#x27;OK&#x27;
+  });
+}
+}
+</code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="templateData">
+        <pre class="line-numbers"><code class="language-html">&lt;div class&#x3D;&quot;product-container&quot;&gt;
+    &lt;!-- Contenedor de la imagen y la info --&gt;
+    &lt;div class&#x3D;&quot;product-details&quot;&gt;
+      &lt;!-- Carrusel de las fotos --&gt;
+      &lt;div class&#x3D;&quot;carousel-container&quot;&gt;
+        &lt;button class&#x3D;&quot;carousel-btn left&quot; (click)&#x3D;&quot;cambiarImagen(-1)&quot;&gt;&amp;#10094;&lt;/button&gt;
+        &lt;div class&#x3D;&quot;image-wrapper&quot;&gt;
+          &lt;img [src]&#x3D;&quot;producto.imagenes[imagenActualIndex]&quot; [alt]&#x3D;&quot;producto.nombre&quot;&gt;
+        &lt;/div&gt;
+        &lt;button class&#x3D;&quot;carousel-btn right&quot; (click)&#x3D;&quot;cambiarImagen(1)&quot;&gt;&amp;#10095;&lt;/button&gt;
+        &lt;div class&#x3D;&quot;carousel-indicators&quot;&gt;
+          &lt;span *ngFor&#x3D;&quot;let img of producto.imagenes; let i &#x3D; index&quot;
+                class&#x3D;&quot;indicator&quot;
+                [class.active]&#x3D;&quot;i &#x3D;&#x3D;&#x3D; imagenActualIndex&quot;
+                (click)&#x3D;&quot;seleccionarImagen(i)&quot;&gt;
+          &lt;/span&gt;
+        &lt;/div&gt;
+      &lt;/div&gt;
+  
+      &lt;!-- Información del producto --&gt;
+      &lt;div class&#x3D;&quot;product-info&quot;&gt;
+        &lt;h2&gt;{{ producto.nombre }}&lt;/h2&gt;
+        &lt;p class&#x3D;&quot;price&quot;&gt;{{ producto.precio }}€&lt;/p&gt;
+        &lt;p&gt;&lt;strong&gt;Talla disponible:&lt;/strong&gt; {{ producto.talla }}&lt;/p&gt;
+        &lt;p&gt;&lt;strong&gt;Color:&lt;/strong&gt; {{ producto.color }}&lt;/p&gt;
+        &lt;button class&#x3D;&quot;add-to-cart&quot; (click)&#x3D;&quot;agregarACesta()&quot;&gt;Añadir a la cesta&lt;/button&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+  
+    &lt;!-- Descripción del producto --&gt;
+    &lt;div class&#x3D;&quot;product-description&quot;&gt;
+      &lt;h3&gt;Descripción&lt;/h3&gt;
+      &lt;p&gt;{{ descripcion }}&lt;/p&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+  </code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="styleData">
+                <p class="comment">
+                    <code>./detalles-producto.component.css</code>
+                </p>
+                <pre class="line-numbers"><code class="language-scss">@import url(&#x27;https://fonts.googleapis.com/css2?family&#x3D;Instrument+Sans:wght@400;700&amp;family&#x3D;Lobster&amp;display&#x3D;swap&#x27;);
+
+/* Contenedor general */
+.product-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Centra todo horizontalmente */
+  justify-content: center;
+  padding: 2rem;
+  background-color: #D9D9D9;
+}
+
+/* Contenedor de los dos primeros elementos (carrusel + info) */
+.product-details {
+  display: flex;
+  justify-content: center; /* Centra horizontalmente */
+  align-items: flex-start; /* Alinea los elementos arriba */
+  gap: 2rem; /* Espacio entre los elementos */
+  flex-wrap: wrap; /* Para dispositivos pequeños */
+  max-width: 1200px; /* Ajusta el ancho máximo */
+  margin: 0 auto; /* Centra el contenido */
+}
+
+/* Carrusel */
+.carousel-container {
+  flex: 1; /* Ocupa el espacio disponible */
+  max-width: 600px; /* Máximo ancho */
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+  padding: 10px;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Imagen dentro del carrusel */
+.image-wrapper {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  overflow: hidden;
+  height: 400px;
+}
+
+.image-wrapper img {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+  transition: transform 0.4s ease-in-out;
+}
+
+/* Animación de deslizamiento */
+.transition {
+  animation: slideAnimation 0.4s ease-in-out;
+}
+
+@keyframes slideAnimation {
+  from {
+    transform: translateX(100%);
+    opacity: 0.8;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+/* Botones del carrusel */
+.carousel-btn {
+  font-family: &#x27;Instrument Sans&#x27;, sans-serif;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(0, 0, 0, 0.5);
+  border: none;
+  color: white;
+  padding: 10px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 24px;
+  transition: 0.4s;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+}
+
+.carousel-btn.left {
+  left: 9px;
+}
+
+.carousel-btn.right {
+  right: 9px;
+}
+
+.carousel-btn:hover {
+  background: rgba(0, 0, 0, 0.8);
+}
+
+/* Indicadores (dots) */
+.carousel-indicators {
+  display: flex;
+  justify-content: center;
+  margin-top: 10px;
+}
+
+.indicator {
+  width: 10px;
+  height: 10px;
+  background: #bbb;
+  border-radius: 50%;
+  margin: 0 5px;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.indicator.active {
+  background: #ff6600;
+}
+
+/* Información del producto */
+.product-info {
+  font-family: &#x27;Instrument Sans&#x27;, sans-serif;
+  flex: 1; /* Ocupa el mismo espacio que el carrusel */
+  max-width: 350px; /* Máximo ancho */
+  background: white;
+  padding: 1.5rem;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  text-align: left;
+}
+
+.product-info h2 {
+  font-family: &#x27;Instrument Sans&#x27;, sans-serif;
+  font-size: 1.8rem;
+  margin-bottom: 10px;
+}
+
+.product-info .price {
+  font-family: &#x27;Instrument Sans&#x27;, sans-serif;
+  font-size: 1.5rem;
+  color: #ff6600;
+  font-weight: bold;
+}
+
+.add-to-cart {
+  font-family: &#x27;Instrument Sans&#x27;, sans-serif;
+  display: inline-block;
+  background: #ff6600;
+  color: white;
+  border: none;
+  padding: 10px 15px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: background 0.3s ease;
+}
+
+.add-to-cart:hover {
+  background: #cc5200;
+}
+
+/* Contenedor de descripción */
+.product-description {
+  max-width: 1000px;
+  background: white;
+  padding: 1.5rem;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  margin: 2rem auto; /* Centra y añade margen superior */
+  text-align: center;
+}
+
+.product-description h3 {
+  font-family: &#x27;Instrument Sans&#x27;, sans-serif;
+  font-size: 1.4rem;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.product-description p {
+  font-family: &#x27;Instrument Sans&#x27;, sans-serif;
+  font-size: 1.1rem;
+  line-height: 1.6;
+  color: #333;
+}
+</code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="tree">
+        <div id="tree-container"></div>
+        <div class="tree-legend">
+            <div class="title">
+                <b>Legend</b>
+            </div>
+            <div>
+                <div class="color htmlelement"></div><span>Html element</span>
+            </div>
+            <div>
+                <div class="color component"></div><span>Component</span>
+            </div>
+            <div>
+                <div class="color directive"></div><span>Html element with directive</span>
+            </div>
+        </div>
+    </div>
+
+    
+</div>
+
+<script src="../js/libs/vis.min.js"></script>
+<script src="../js/libs/htmlparser.js"></script>
+<script src="../js/libs/deep-iterator.js"></script>
+<script>
+        var COMPONENT_TEMPLATE = '<div><div class="product-container">    <!-- Contenedor de la imagen y la info -->    <div class="product-details">      <!-- Carrusel de las fotos -->      <div class="carousel-container">        <button class="carousel-btn left" (click)="cambiarImagen(-1)">&#10094;</button>        <div class="image-wrapper">          <img [src]="producto.imagenes[imagenActualIndex]" [alt]="producto.nombre">        </div>        <button class="carousel-btn right" (click)="cambiarImagen(1)">&#10095;</button>        <div class="carousel-indicators">          <span *ngFor="let img of producto.imagenes; let i = index"                class="indicator"                [class.active]="i === imagenActualIndex"                (click)="seleccionarImagen(i)">          </span>        </div>      </div>        <!-- Información del producto -->      <div class="product-info">        <h2>{{ producto.nombre }}</h2>        <p class="price">{{ producto.precio }}€</p>        <p><strong>Talla disponible:</strong> {{ producto.talla }}</p>        <p><strong>Color:</strong> {{ producto.color }}</p>        <button class="add-to-cart" (click)="agregarACesta()">Añadir a la cesta</button>      </div>    </div>      <!-- Descripción del producto -->    <div class="product-description">      <h3>Descripción</h3>      <p>{{ descripcion }}</p>    </div>  </div>  </div>'
+    var COMPONENTS = [{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'CatalogoComponent', 'selector': 'app-catalogo'},{'name': 'CestaComponent', 'selector': 'app-cesta'},{'name': 'ContactaComponent', 'selector': 'app-contacto'},{'name': 'DetallesProductoComponent', 'selector': 'app-detalles-producto'},{'name': 'FooterComponent', 'selector': 'app-footer'},{'name': 'HeaderComponent', 'selector': 'app-header'},{'name': 'HomeComponent', 'selector': 'app-home'},{'name': 'InterfaceComponent', 'selector': 'app-interface'}];
+    var DIRECTIVES = [];
+    var ACTUAL_COMPONENT = {'name': 'DetallesProductoComponent'};
+</script>
+<script src="../js/tree.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                   </div><div class="search-results">
+    <div class="has-results">
+        <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+        <ul class="search-results-list"></ul>
+    </div>
+    <div class="no-results">
+        <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+    </div>
+</div>
+</div>
+               <!-- END CONTENT -->
+           </div>
+       </div>
+
+          <label class="dark-mode-switch">
+               <input type="checkbox">
+               <span class="slider">
+                    <svg class="slider-icon" viewBox="0 0 24 24" fill="none" height="20" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" width="20" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"></path>
+                    </svg>
+               </span>
+          </label>
+
+       <script>
+            var COMPODOC_CURRENT_PAGE_DEPTH = 1;
+            var COMPODOC_CURRENT_PAGE_CONTEXT = 'component';
+            var COMPODOC_CURRENT_PAGE_URL = 'DetallesProductoComponent.html';
+            var MAX_SEARCH_RESULTS = 15;
+       </script>
+
+       <script>
+               $darkModeToggleSwitchers = document.querySelectorAll('.dark-mode-switch input');
+               checkToggle(darkModeState);
+               if ($darkModeToggleSwitchers.length > 0) {
+                    for (var i = 0; i < $darkModeToggleSwitchers.length; i++) {
+                         $darkModeToggleSwitchers[i].addEventListener('change', function (event) {
+                              darkModeState = !darkModeState;
+                              toggleDarkMode(darkModeState);
+                         });
+                    }
+               }
+          </script>
+
+       <script src="../js/libs/custom-elements.min.js"></script>
+       <script src="../js/libs/lit-html.js"></script>
+
+       <script src="../js/menu-wc.js" defer></script>
+       <script nomodule src="../js/menu-wc_es5.js" defer></script>
+
+       <script src="../js/libs/bootstrap-native.js"></script>
+
+       <script src="../js/libs/es6-shim.min.js"></script>
+       <script src="../js/libs/EventDispatcher.js"></script>
+       <script src="../js/libs/promise.min.js"></script>
+
+       <script src="../js/compodoc.js"></script>
+
+       <script src="../js/tabs.js"></script>
+       <script src="../js/menu.js"></script>
+       <script src="../js/libs/clipboard.min.js"></script>
+       <script src="../js/libs/prism.js"></script>
+       <script src="../js/sourceCode.js"></script>
+          <script src="../js/search/search.js"></script>
+          <script src="../js/search/lunr.min.js"></script>
+          <script src="../js/search/search-lunr.js"></script>
+          <script src="../js/search/search_index.js"></script>
+       <script src="../js/lazy-load-graphs.js"></script>
+
+
+    </body>
+</html>

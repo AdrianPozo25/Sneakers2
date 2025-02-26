@@ -1,0 +1,36 @@
+<div class="product-container">
+    <!-- Contenedor de la imagen y la info -->
+    <div class="product-details">
+      <!-- Carrusel de las fotos -->
+      <div class="carousel-container">
+        <button class="carousel-btn left" (click)="cambiarImagen(-1)">&#10094;</button>
+        <div class="image-wrapper">
+          <img [src]="producto.imagenes[imagenActualIndex]" [alt]="producto.nombre">
+        </div>
+        <button class="carousel-btn right" (click)="cambiarImagen(1)">&#10095;</button>
+        <div class="carousel-indicators">
+          <span *ngFor="let img of producto.imagenes; let i = index"
+                class="indicator"
+                [class.active]="i === imagenActualIndex"
+                (click)="seleccionarImagen(i)">
+          </span>
+        </div>
+      </div>
+  
+      <!-- Información del producto -->
+      <div class="product-info">
+        <h2>{{ producto.nombre }}</h2>
+        <p class="price">{{ producto.precio }}€</p>
+        <p><strong>Talla disponible:</strong> {{ producto.talla }}</p>
+        <p><strong>Color:</strong> {{ producto.color }}</p>
+        <button class="add-to-cart" (click)="agregarACesta()">Añadir a la cesta</button>
+      </div>
+    </div>
+  
+    <!-- Descripción del producto -->
+    <div class="product-description">
+      <h3>Descripción</h3>
+      <p>{{ descripcion }}</p>
+    </div>
+  </div>
+  

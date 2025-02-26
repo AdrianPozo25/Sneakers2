@@ -1,0 +1,187 @@
+@import url('https://fonts.googleapis.com/css2?family=Instrument+Sans:wght@400;700&family=Lobster&display=swap');
+
+/* Contenedor general */
+.product-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Centra todo horizontalmente */
+  justify-content: center;
+  padding: 2rem;
+  background-color: #D9D9D9;
+}
+
+/* Contenedor de los dos primeros elementos (carrusel + info) */
+.product-details {
+  display: flex;
+  justify-content: center; /* Centra horizontalmente */
+  align-items: flex-start; /* Alinea los elementos arriba */
+  gap: 2rem; /* Espacio entre los elementos */
+  flex-wrap: wrap; /* Para dispositivos pequeños */
+  max-width: 1200px; /* Ajusta el ancho máximo */
+  margin: 0 auto; /* Centra el contenido */
+}
+
+/* Carrusel */
+.carousel-container {
+  flex: 1; /* Ocupa el espacio disponible */
+  max-width: 600px; /* Máximo ancho */
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+  padding: 10px;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Imagen dentro del carrusel */
+.image-wrapper {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  overflow: hidden;
+  height: 400px;
+}
+
+.image-wrapper img {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+  transition: transform 0.4s ease-in-out;
+}
+
+/* Animación de deslizamiento */
+.transition {
+  animation: slideAnimation 0.4s ease-in-out;
+}
+
+@keyframes slideAnimation {
+  from {
+    transform: translateX(100%);
+    opacity: 0.8;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+/* Botones del carrusel */
+.carousel-btn {
+  font-family: 'Instrument Sans', sans-serif;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(0, 0, 0, 0.5);
+  border: none;
+  color: white;
+  padding: 10px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 24px;
+  transition: 0.4s;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+}
+
+.carousel-btn.left {
+  left: 9px;
+}
+
+.carousel-btn.right {
+  right: 9px;
+}
+
+.carousel-btn:hover {
+  background: rgba(0, 0, 0, 0.8);
+}
+
+/* Indicadores (dots) */
+.carousel-indicators {
+  display: flex;
+  justify-content: center;
+  margin-top: 10px;
+}
+
+.indicator {
+  width: 10px;
+  height: 10px;
+  background: #bbb;
+  border-radius: 50%;
+  margin: 0 5px;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.indicator.active {
+  background: #ff6600;
+}
+
+/* Información del producto */
+.product-info {
+  font-family: 'Instrument Sans', sans-serif;
+  flex: 1; /* Ocupa el mismo espacio que el carrusel */
+  max-width: 350px; /* Máximo ancho */
+  background: white;
+  padding: 1.5rem;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  text-align: left;
+}
+
+.product-info h2 {
+  font-family: 'Instrument Sans', sans-serif;
+  font-size: 1.8rem;
+  margin-bottom: 10px;
+}
+
+.product-info .price {
+  font-family: 'Instrument Sans', sans-serif;
+  font-size: 1.5rem;
+  color: #ff6600;
+  font-weight: bold;
+}
+
+.add-to-cart {
+  font-family: 'Instrument Sans', sans-serif;
+  display: inline-block;
+  background: #ff6600;
+  color: white;
+  border: none;
+  padding: 10px 15px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: background 0.3s ease;
+}
+
+.add-to-cart:hover {
+  background: #cc5200;
+}
+
+/* Contenedor de descripción */
+.product-description {
+  max-width: 1000px;
+  background: white;
+  padding: 1.5rem;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  margin: 2rem auto; /* Centra y añade margen superior */
+  text-align: center;
+}
+
+.product-description h3 {
+  font-family: 'Instrument Sans', sans-serif;
+  font-size: 1.4rem;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.product-description p {
+  font-family: 'Instrument Sans', sans-serif;
+  font-size: 1.1rem;
+  line-height: 1.6;
+  color: #333;
+}

@@ -1,0 +1,89 @@
+@import url('https://fonts.googleapis.com/css2?family=Instrument+Sans:wght@400;700&family=Lobster&display=swap');
+
+/* ===== CONTENEDOR PRINCIPAL ===== */
+.catalogo-container {
+    text-align: center;
+    padding: 2rem;
+    background-color: #D9D9D9;
+}
+
+.catalogo-container h2 {
+    font-family: 'Instrument Sans', sans-serif;
+    font-size: 2rem;
+    font-weight: bold;
+    margin-bottom: 4rem;
+    margin-top: 2rem;
+    color: #FFFFFF;
+}
+
+/* ===== GRID DE PRODUCTOS ===== */
+.products-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* Diseño flexible */
+    gap: 1.5rem;
+    justify-content: center;
+    padding: 1rem;
+}
+
+/* ===== ESTILOS PARA CADA PRODUCTO ===== */
+.product-item {
+    background-color: #FFFFFF;
+    padding: 1rem;
+    border-radius: 8px;
+    text-align: center;
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    text-decoration: none; /* 🔹 Elimina el subrayado del enlace en todo el contenedor */
+    color: inherit;
+}
+
+.product-link {
+    text-decoration: none; /* Elimina el subrayado */
+    color: inherit; /* Mantiene el color de texto original */
+}
+
+.product-link:hover {
+    text-decoration: none; /* Asegura que no aparezca al pasar el cursor */
+}
+
+/* Animación al pasar el mouse */
+.product-item:hover {
+    transform: scale(1.05);
+    box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.2);
+}
+
+/* ===== IMAGEN DEL PRODUCTO ===== */
+.product-image {
+    width: 100%;
+    height: 200px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    border-radius: 8px;
+    background-color: #FFFFFF;
+}
+
+.product-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+/* ===== TEXTO DEL PRODUCTO ===== */
+.product-item h3 {
+    font-size: 1.1rem;
+    font-family: 'Instrument Sans', sans-serif; /* Aplica la fuente Instrument Sans */
+    font-weight: 700; /* Hace que el título resalte más */
+    margin: 0.5rem 0;
+    color: #333;
+    text-decoration: none !important; /* 🔹 Elimina subrayado en el título */
+}
+
+.product-item .price {
+    font-size: 1rem;
+    font-family: 'Instrument Sans', sans-serif; /* Aplica la fuente Instrument Sans */
+    font-weight: 600;
+    color: #D97E42;
+    text-decoration: none !important; /* 🔹 Elimina subrayado en el precio */
+}

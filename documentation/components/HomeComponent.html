@@ -1,0 +1,1089 @@
+<!doctype html>
+<html class="no-js" lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>sneakers2 documentation</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="icon" type="image/x-icon" href="../images/favicon.ico">
+	   <link rel="stylesheet" href="../styles/style.css">
+        <link rel="stylesheet" href="../styles/dark.css">
+    </head>
+    <body>
+          <script>
+               // Blocking script to avoid flickering dark mode
+               // Dark mode toggle button
+               var useDark = window.matchMedia('(prefers-color-scheme: dark)');
+               var darkModeState = useDark.matches;
+               var $darkModeToggleSwitchers = document.querySelectorAll('.dark-mode-switch input');
+               var $darkModeToggles = document.querySelectorAll('.dark-mode-switch');
+               var darkModeStateLocal = localStorage.getItem('compodoc_darkmode-state');
+
+               function checkToggle(check) {
+                    for (var i = 0; i < $darkModeToggleSwitchers.length; i++) {
+                         $darkModeToggleSwitchers[i].checked = check;
+                    }
+               }
+
+               function toggleDarkMode(state) {
+                    if (window.localStorage) {
+                         localStorage.setItem('compodoc_darkmode-state', state);
+                    }
+
+                    checkToggle(state);
+
+                    const hasClass = document.body.classList.contains('dark');
+
+                    if (state) {
+                         for (var i = 0; i < $darkModeToggles.length; i++) {
+                              $darkModeToggles[i].classList.add('dark');
+                         }
+                         if (!hasClass) {
+                              document.body.classList.add('dark');
+                         }
+                    } else {
+                         for (var i = 0; i < $darkModeToggles.length; i++) {
+                              $darkModeToggles[i].classList.remove('dark');
+                         }
+                         if (hasClass) {
+                              document.body.classList.remove('dark');
+                         }
+                    }
+               }
+
+               useDark.addEventListener('change', function (evt) {
+                    toggleDarkMode(evt.matches);
+               });
+               if (darkModeStateLocal) {
+                    darkModeState = darkModeStateLocal === 'true';
+               }
+               toggleDarkMode(darkModeState);
+          </script>
+
+        <div class="navbar navbar-default navbar-fixed-top d-md-none p-0">
+               <div class="d-flex">
+                    <a href="../" class="navbar-brand">sneakers2 documentation</a>
+                    <button type="button" class="btn btn-default btn-menu ion-ios-menu" id="btn-menu"></button>
+               </div>
+        </div>
+
+        <div class="xs-menu menu" id="mobile-menu">
+                <div id="book-search-input" role="search"><input type="text" placeholder="Type to search"></div>            <compodoc-menu></compodoc-menu>
+        </div>
+
+        <div class="container-fluid main">
+           <div class="row main">
+               <div class="d-none d-md-block menu">
+                   <compodoc-menu mode="normal"></compodoc-menu>
+               </div>
+               <!-- START CONTENT -->
+               <div class="content component">
+                   <div class="content-data">
+
+
+
+
+<ol class="breadcrumb">
+  <li class="breadcrumb-item">Components</li>
+  <li class="breadcrumb-item"
+  >
+  HomeComponent</li>
+</ol>
+
+<ul class="nav nav-tabs" role="tablist">
+        <li class="nav-item">
+            <a href="#info" class="nav-link active"
+                role="tab" id="info-tab" data-bs-toggle="tab" data-link="info">Info</a>
+        </li>
+        <li class="nav-item">
+            <a href="#source" class="nav-link"
+                role="tab" id="source-tab" data-bs-toggle="tab" data-link="source">Source</a>
+        </li>
+        <li class="nav-item">
+            <a href="#templateData" class="nav-link"
+                role="tab" id="templateData-tab" data-bs-toggle="tab" data-link="template">Template</a>
+        </li>
+        <li class="nav-item">
+            <a href="#styleData" class="nav-link"
+                role="tab" id="styleData-tab" data-bs-toggle="tab" data-link="style">Styles</a>
+        </li>
+        <li class="nav-item">
+            <a href="#tree" class="nav-link"
+                role="tab" id="tree-tab" data-bs-toggle="tab" data-link="dom-tree">DOM Tree</a>
+        </li>
+</ul>
+
+<div class="tab-content">
+    <div class="tab-pane fade active in" id="info"><p class="comment">
+    <h3>File</h3>
+</p>
+<p class="comment">
+    <code>src/app/pages/home/home.component.ts</code>
+</p>
+
+
+
+
+    <p class="comment">
+        <h3>Implements</h3>
+    </p>
+    <p class="comment">
+                <code>OnInit</code>
+    </p>
+
+
+<section data-compodoc="block-metadata">
+    <h3>Metadata</h3>
+    <table class="table table-sm table-hover metadata">
+        <tbody>
+
+
+
+
+
+
+
+
+
+
+
+
+            <tr>
+                <td class="col-md-3">selector</td>
+                <td class="col-md-9"><code>app-home</code></td>
+            </tr>
+
+
+
+            <tr>
+                <td class="col-md-3">styleUrls</td>
+                <td class="col-md-9"><code>./home.component.css</code></td>
+            </tr>
+
+
+
+            <tr>
+                <td class="col-md-3">templateUrl</td>
+                <td class="col-md-9"><code>./home.component.html</code></td>
+            </tr>
+
+
+
+
+
+
+
+
+        </tbody>
+    </table>
+</section>
+
+    <section data-compodoc="block-index">
+    <h3 id="index">Index</h3>
+    <table class="table table-sm table-bordered index-table">
+        <tbody>
+
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Methods</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                    <span class="modifier">Private</span>
+                                <a href="#initPlayers" >initPlayers</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Private</span>
+                                <a href="#loadYouTubeAPI" >loadYouTubeAPI</a>
+                            </li>
+                            <li>
+                                <a href="#ngOnInit" >ngOnInit</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Private</span>
+                                <a href="#onPlayerReady" >onPlayerReady</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Private</span>
+                                <a href="#onPlayerStateChange" >onPlayerStateChange</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+
+
+
+
+        </tbody>
+    </table>
+</section>
+
+    <section data-compodoc="block-constructor">
+    <h3 id="constructor">Constructor</h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+<code>constructor(platformId: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/object" target="_blank">object</a>)</code>
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="18" class="link-to-prism">src/app/pages/home/home.component.ts:18</a></div>
+                            </td>
+                        </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                            <div>
+                                    <b>Parameters :</b>
+                                    <table class="params">
+                                        <thead>
+                                            <tr>
+                                                <td>Name</td>
+                                                    <td>Type</td>
+                                                <td>Optional</td>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                                <tr>
+                                                        <td>platformId</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/object" target="_blank" >object</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                        </tbody>
+                                    </table>
+                            </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+</section>
+
+
+
+
+
+    <section data-compodoc="block-methods">
+    
+    <h3 id="methods">
+        Methods
+    </h3>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="initPlayers"></a>
+                    <span class="name">
+                            <span class="modifier">Private</span>
+                        <span ><b>initPlayers</b></span>
+                        <a href="#initPlayers"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                        <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>initPlayers()</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="55"
+                                    class="link-to-prism">src/app/pages/home/home.component.ts:55</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-description"><p>Inicializa los reproductores en los contenedores &quot;player1&quot; y &quot;player2&quot;.</p>
+</div>
+
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="loadYouTubeAPI"></a>
+                    <span class="name">
+                            <span class="modifier">Private</span>
+                        <span ><b>loadYouTubeAPI</b></span>
+                        <a href="#loadYouTubeAPI"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                        <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>loadYouTubeAPI()</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="34"
+                                    class="link-to-prism">src/app/pages/home/home.component.ts:34</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-description"><p>Carga el script de la API de YouTube dinámicamente y define la función
+que será llamada cuando la API esté lista.</p>
+</div>
+
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="ngOnInit"></a>
+                    <span class="name">
+                        <span ><b>ngOnInit</b></span>
+                        <a href="#ngOnInit"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>ngOnInit()</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="23"
+                                    class="link-to-prism">src/app/pages/home/home.component.ts:23</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="onPlayerReady"></a>
+                    <span class="name">
+                            <span class="modifier">Private</span>
+                        <span ><b>onPlayerReady</b></span>
+                        <a href="#onPlayerReady"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                        <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>onPlayerReady(event: <a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank">any</a>)</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="85"
+                                    class="link-to-prism">src/app/pages/home/home.component.ts:85</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-description"><p>Función que se ejecuta cuando el reproductor está listo.</p>
+</div>
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                                <td>Type</td>
+                                            <td>Optional</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>event</td>
+                                            <td>
+                                                            <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                            <div class="io-description">
+                                
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="onPlayerStateChange"></a>
+                    <span class="name">
+                            <span class="modifier">Private</span>
+                        <span ><b>onPlayerStateChange</b></span>
+                        <a href="#onPlayerStateChange"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                        <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>onPlayerStateChange(event: <a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank">any</a>)</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="93"
+                                    class="link-to-prism">src/app/pages/home/home.component.ts:93</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-description"><p>Función que se ejecuta cuando el estado del reproductor cambia.</p>
+</div>
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                                <td>Type</td>
+                                            <td>Optional</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>event</td>
+                                            <td>
+                                                            <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                            <div class="io-description">
+                                
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</section>
+
+</div>
+
+
+    <div class="tab-pane fade  tab-source-code" id="source">
+        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Component, Inject, OnInit, PLATFORM_ID } from &#x27;@angular/core&#x27;;
+import { isPlatformBrowser } from &#x27;@angular/common&#x27;;
+
+// Declaración global para TypeScript que permite asignar funciones a &#x60;window&#x60;
+declare global {
+  interface Window {
+    onYouTubeIframeAPIReady: () &#x3D;&gt; void; // Función que se ejecutará cuando la API de YouTube esté lista
+    YT: any; // Referencia al objeto YT de la API de YouTube
+  }
+}
+
+@Component({
+  selector: &#x27;app-home&#x27;,
+  standalone: false, // Indica que este componente no es autónomo y debe formar parte de un módulo
+  templateUrl: &#x27;./home.component.html&#x27;,
+  styleUrls: [&#x27;./home.component.css&#x27;]
+})
+export class HomeComponent implements OnInit {
+  
+  // Inyección del identificador de la plataforma (servidor o navegador)
+  constructor(@Inject(PLATFORM_ID) private platformId: object) {}
+
+  ngOnInit(): void {
+    // Verifica si el código se está ejecutando en el navegador (para evitar errores en SSR - Server Side Rendering)
+    if (isPlatformBrowser(this.platformId)) {
+      this.loadYouTubeAPI(); // ✅ Carga la API de YouTube solo en el navegador
+    }
+  }
+
+  /**
+   * Carga el script de la API de YouTube dinámicamente y define la función
+   * que será llamada cuando la API esté lista.
+   */
+  private loadYouTubeAPI(): void {
+    // Verifica nuevamente si estamos en el navegador y si la API de YouTube aún no está cargada
+    if (isPlatformBrowser(this.platformId) &amp;&amp; !window.YT) {
+      const script &#x3D; document.createElement(&#x27;script&#x27;); // Crea un elemento &lt;script&gt;
+      script.src &#x3D; &#x27;https://www.youtube.com/iframe_api&#x27;; // URL de la API de YouTube
+      script.async &#x3D; true; // Carga asíncrona
+      script.defer &#x3D; true; // Retrasa la ejecución hasta que el HTML esté completamente analizado
+      document.body.appendChild(script); // Agrega el script al DOM
+
+      // Define la función que será llamada automáticamente cuando la API de YouTube esté lista
+      window.onYouTubeIframeAPIReady &#x3D; () &#x3D;&gt; {
+        this.initPlayers(); // ✅ Inicializa los reproductores de video cuando la API está lista
+      };
+    } else if (window.YT) { // Si la API ya está cargada, inicializa los reproductores de inmediato
+      this.initPlayers();
+    }
+  }
+
+  /**
+   * Inicializa los reproductores en los contenedores &quot;player1&quot; y &quot;player2&quot;.
+   */
+  private initPlayers(): void {
+    // Verifica que estamos en el navegador y que la API de YouTube está disponible
+    if (isPlatformBrowser(this.platformId) &amp;&amp; window.YT) {
+      // Crea un reproductor de YouTube en el contenedor con ID &#x27;player1&#x27;
+      new window.YT.Player(&#x27;player1&#x27;, {
+        height: &#x27;360&#x27;, // Altura del reproductor
+        width: &#x27;640&#x27;, // Ancho del reproductor
+        videoId: &#x27;L7cfqClWYNI&#x27;, // ID del video de YouTube a cargar
+        events: {
+          &#x27;onReady&#x27;: this.onPlayerReady, // Función llamada cuando el reproductor está listo
+          &#x27;onStateChange&#x27;: this.onPlayerStateChange // Función llamada cuando cambia el estado del reproductor
+        }
+      });
+
+      // Crea otro reproductor de YouTube en el contenedor con ID &#x27;player2&#x27;
+      new window.YT.Player(&#x27;player2&#x27;, {
+        height: &#x27;360&#x27;,
+        width: &#x27;640&#x27;,
+        videoId: &#x27;QqLy3SFwo6M&#x27;,
+        events: {
+          &#x27;onReady&#x27;: this.onPlayerReady,
+          &#x27;onStateChange&#x27;: this.onPlayerStateChange
+        }
+      });
+    }
+  }
+
+  /**
+   * Función que se ejecuta cuando el reproductor está listo.
+   */
+  private onPlayerReady(event: any): void {
+    console.log(&#x27;El reproductor de YouTube está listo.&#x27;);
+    // event.target.playVideo(); // Descomentar si quieres que el video se reproduzca automáticamente
+  }
+
+  /**
+   * Función que se ejecuta cuando el estado del reproductor cambia.
+   */
+  private onPlayerStateChange(event: any): void {
+    console.log(&#x27;Estado del reproductor cambió:&#x27;, event.data);
+  }
+}
+</code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="templateData">
+        <pre class="line-numbers"><code class="language-html">&lt;!-- Sección de Productos Destacados --&gt;
+&lt;section class&#x3D;&quot;featured-products&quot;&gt;
+  &lt;h2&gt;Los sneakers a mejor precio de todo el mercado&lt;/h2&gt;
+
+  &lt;!-- Nuevo contenedor que engloba todos los productos --&gt;
+  &lt;div class&#x3D;&quot;products-container&quot;&gt;
+    &lt;div class&#x3D;&quot;products-grid&quot;&gt;
+      &lt;!-- Producto 1 --&gt;
+      &lt;div class&#x3D;&quot;product-item&quot; [routerLink]&#x3D;&quot;[&#x27;/detalles&#x27;, 1]&quot;&gt;
+        &lt;div class&#x3D;&quot;product-content&quot;&gt; &lt;!-- Contenedor específico para imagen + info --&gt;
+          &lt;div class&#x3D;&quot;product-image&quot;&gt;
+            &lt;img src&#x3D;&quot;image/travisfondoblanco.jpg&quot; alt&#x3D;&quot;Producto 1&quot; /&gt;
+          &lt;/div&gt;
+          &lt;h3&gt;Jordan 1 Retro High OG&lt;/h3&gt;
+          &lt;p class&#x3D;&quot;price&quot;&gt;539.99€&lt;/p&gt;
+        &lt;/div&gt;
+      &lt;/div&gt;
+      &lt;!-- Producto 2 --&gt;
+      &lt;div class&#x3D;&quot;product-item&quot; [routerLink]&#x3D;&quot;[&#x27;/detalles&#x27;, 2]&quot;&gt;
+        &lt;div class&#x3D;&quot;product-content&quot;&gt;
+          &lt;div class&#x3D;&quot;product-image&quot;&gt;
+            &lt;img src&#x3D;&quot;image/kayano14.jpg&quot; alt&#x3D;&quot;Producto 2&quot; /&gt;
+          &lt;/div&gt;
+          &lt;h3&gt;Asics Kayano 14&lt;/h3&gt;
+          &lt;p class&#x3D;&quot;price&quot;&gt;159.99€&lt;/p&gt;
+        &lt;/div&gt;
+      &lt;/div&gt;
+      &lt;!-- Producto 3 --&gt;
+      &lt;div class&#x3D;&quot;product-item&quot; [routerLink]&#x3D;&quot;[&#x27;/detalles&#x27;, 3]&quot;&gt;
+        &lt;div class&#x3D;&quot;product-content&quot;&gt;
+          &lt;div class&#x3D;&quot;product-image&quot;&gt;
+            &lt;img src&#x3D;&quot;image/maison.png&quot; alt&#x3D;&quot;Producto 3&quot; /&gt;
+          &lt;/div&gt;
+          &lt;h3&gt;Maison Mihara Yasuhiro&lt;/h3&gt;
+          &lt;p class&#x3D;&quot;price&quot;&gt;249.99€&lt;/p&gt;
+        &lt;/div&gt;
+      &lt;/div&gt;
+      &lt;!-- Producto 4 --&gt;
+      &lt;div class&#x3D;&quot;product-item&quot; [routerLink]&#x3D;&quot;[&#x27;/detalles&#x27;, 4]&quot;&gt;
+        &lt;div class&#x3D;&quot;product-content&quot;&gt;
+          &lt;div class&#x3D;&quot;product-image&quot;&gt;
+            &lt;img src&#x3D;&quot;image/yeezyfoamrunner.jpg&quot; alt&#x3D;&quot;Producto 4&quot; /&gt;
+          &lt;/div&gt;
+          &lt;h3&gt;Yeezy foam runner&lt;/h3&gt;
+          &lt;p class&#x3D;&quot;price&quot;&gt;59.99€&lt;/p&gt;
+        &lt;/div&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/section&gt;
+
+&lt;!-- Sección intermedia: beneficios --&gt;
+&lt;section class&#x3D;&quot;benefits-section&quot;&gt;
+  &lt;ul class&#x3D;&quot;benefits-list&quot;&gt;
+    &lt;li&gt;Materiales de calidad&lt;/li&gt;
+    &lt;li&gt;Devolución rápida&lt;/li&gt;
+    &lt;li&gt;Envíos 48 horas&lt;/li&gt;
+  &lt;/ul&gt;
+&lt;/section&gt;
+
+&lt;!-- Sección inferior con video --&gt;
+&lt;section class&#x3D;&quot;video-section&quot;&gt;
+  &lt;div class&#x3D;&quot;video-container&quot;&gt;
+    &lt;!-- Contenedor del primer video --&gt;
+    &lt;div id&#x3D;&quot;player1&quot;&gt;&lt;/div&gt;
+    &lt;!-- Contenedor del segundo video --&gt;
+    &lt;div id&#x3D;&quot;player2&quot;&gt;&lt;/div&gt;
+  &lt;/div&gt;
+&lt;/section&gt;
+
+&lt;!-- Sección con información de la empresa --&gt;
+&lt;!-- Sección de información de la empresa --&gt;
+&lt;section class&#x3D;&quot;company-info&quot;&gt;
+  &lt;!-- Imagen izquierda --&gt;
+  &lt;div class&#x3D;&quot;company-image left&quot;&gt;
+    &lt;img src&#x3D;&quot;image/fondotienda.webp&quot; alt&#x3D;&quot;Nuestra empresa&quot;&gt;
+  &lt;/div&gt;
+
+  &lt;!-- Descripción de la empresa --&gt;
+  &lt;div class&#x3D;&quot;company-description&quot;&gt;
+    &lt;h3&gt;Sobre nuestra empresa&lt;/h3&gt;
+    &lt;p&gt;
+      En Sneakers, nos especializamos en traer las zapatillas más exclusivas 
+      y codiciadas del mercado. Trabajamos con marcas reconocidas y garantizamos 
+      calidad, autenticidad y el mejor servicio.
+    &lt;/p&gt;
+    &lt;a href&#x3D;&quot;/catalogo&quot; class&#x3D;&quot;btn-detalle&quot;&gt;Ver catálogo →&lt;/a&gt;
+  &lt;/div&gt;
+
+  &lt;!-- Imagen derecha --&gt;
+  &lt;div class&#x3D;&quot;company-image right&quot;&gt;
+    &lt;img src&#x3D;&quot;image/fondotienda2.png&quot; alt&#x3D;&quot;Equipo de trabajo&quot;&gt;
+  &lt;/div&gt;
+&lt;/section&gt;
+
+
+</code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="styleData">
+                <p class="comment">
+                    <code>./home.component.css</code>
+                </p>
+                <pre class="line-numbers"><code class="language-scss">@import url(&#x27;https://fonts.googleapis.com/css2?family&#x3D;Instrument+Sans:wght@400;700&amp;family&#x3D;Lobster&amp;display&#x3D;swap&#x27;);
+
+/* &#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D; SECCIÓN DE PRODUCTOS DESTACADOS &#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D; */
+.featured-products {
+  background-color: #D9D9D9;
+  padding: 3rem 2rem;
+  text-align: center;
+}
+
+.featured-products h2 {
+  margin-bottom: 1.5rem;
+  color: #FFFFFF;
+  font-family: &#x27;Instrument Sans&#x27;, sans-serif; /* Corrección del nombre de la fuente */
+  font-size: 2rem;
+}
+
+/* &#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D; CONTENEDOR GENERAL DE PRODUCTOS &#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D; */
+.products-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 2rem;
+  background-color: #D9D9D9;
+}
+
+/* &#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D; GRID PARA LOS PRODUCTOS &#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D; */
+.products-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1.5rem;
+}
+
+/* &#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D; ESTILO DE CADA PRODUCTO &#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D; */
+.product-item {
+  background-color: #FFFFFF;
+  padding: 1rem;
+  border-radius: 8px;
+  text-align: center;
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Efecto hover: el producto se agranda al pasar el mouse */
+.product-item:hover {
+  transform: scale(1.1);
+  box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.2);
+}
+
+/* &#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D; CONTENEDOR DE IMAGEN &#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D; */
+.product-image {
+  width: 100%;
+  height: 200px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  border-radius: 8px;
+  background-color: #FFFFFF;
+}
+
+.product-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+/* &#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D; ESTILO DEL NOMBRE Y PRECIO &#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D; */
+.product-item h3 {
+  font-size: 1.2rem;
+  font-family: &#x27;Instrument Sans&#x27;, sans-serif; /* Aplica la fuente Instrument Sans */
+  font-weight: 700; /* Hace que el título resalte más */
+  margin: 0.5rem 0;
+  color: #333;
+}
+
+.product-item .price {
+  font-size: 1rem;
+  font-family: &#x27;Instrument Sans&#x27;, sans-serif; /* Aplica la fuente Instrument Sans */
+  font-weight: 600;
+  color: #D97E42;
+}
+
+/* &#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D; SECCIÓN DE BENEFICIOS &#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D; */
+.benefits-section {
+  background-color: #0E0E24;
+  padding: 1.5rem 0;
+  color: #fff;
+  text-align: center;
+  
+}
+
+.benefits-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+ 
+}
+
+.benefits-list li {
+  font-size: 1.2rem;
+  font-weight: 600;
+  
+}
+
+/* &#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D; SECCIÓN INFERIOR (EMPRESA, FOTOS, ETC.) &#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D; */
+/* &#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D; SECCIÓN DE INFORMACIÓN DE LA EMPRESA &#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D; */
+.company-info {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 2rem;
+  padding: 4rem 5%;
+  background-color: #D9D9D9;
+  text-align: center;
+  flex-wrap: wrap; /* Permite que se ajuste en pantallas pequeñas */
+}
+
+/* Contenedores de imágenes */
+.company-image {
+  width: 350px; /* Ajuste de tamaño para mejor visibilidad */
+  height: 350px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.company-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 10px; /* Bordes más suaves */
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+/* Descripción de la empresa */
+.company-description {
+  max-width: 500px;
+  color: #333;
+  font-family: &#x27;Instrument Sans&#x27;, sans-serif;
+  padding: 1rem;
+  flex: 1; /* Permite que se ajuste mejor */
+}
+
+.company-description h3 {
+  font-size: 2rem;
+  font-weight: bold;
+  margin-bottom: 1rem;
+}
+
+/* Botón de &quot;Ver catálogo&quot; */
+.btn-detalle {
+  display: inline-block;
+  background-color: #D97E42;
+  color: #fff;
+  padding: 0.8rem 1.8rem;
+  border-radius: 6px;
+  text-decoration: none;
+  font-weight: bold;
+  transition: background 0.3s ease, transform 0.2s ease;
+}
+
+.btn-detalle:hover {
+  background-color: #b85e30;
+  transform: scale(1.1);
+}
+
+/* Responsividad para pantallas pequeñas */
+@media (max-width: 1024px) {
+  .company-info {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .company-image {
+    width: 80%;
+    height: auto;
+  }
+
+  .company-description {
+    max-width: 90%;
+  }
+}
+
+
+/* &#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D; SECCIÓN DEL VIDEO &#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D; */
+/* &#x3D;&#x3D;&#x3D;&#x3D;&#x3D; SECCIÓN DEL VIDEO &#x3D;&#x3D;&#x3D;&#x3D;&#x3D; */
+.video-section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #D9D9D9;
+  padding: 2rem;
+}
+
+/* Contenedor de los videos */
+.video-container {
+  display: flex;
+  gap: 2rem; /* Espacio entre los videos */
+  justify-content: center;
+  align-items: center;
+}
+
+/* Cada contenedor de video */
+#player1, #player2 {
+  width: 560px;
+  height: 315px;
+  background-color: black; /* Opcional para mejorar el diseño antes de la carga */
+}
+
+</code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="tree">
+        <div id="tree-container"></div>
+        <div class="tree-legend">
+            <div class="title">
+                <b>Legend</b>
+            </div>
+            <div>
+                <div class="color htmlelement"></div><span>Html element</span>
+            </div>
+            <div>
+                <div class="color component"></div><span>Component</span>
+            </div>
+            <div>
+                <div class="color directive"></div><span>Html element with directive</span>
+            </div>
+        </div>
+    </div>
+
+    
+</div>
+
+<script src="../js/libs/vis.min.js"></script>
+<script src="../js/libs/htmlparser.js"></script>
+<script src="../js/libs/deep-iterator.js"></script>
+<script>
+        var COMPONENT_TEMPLATE = '<div><!-- Sección de Productos Destacados --><section class="featured-products">  <h2>Los sneakers a mejor precio de todo el mercado</h2>  <!-- Nuevo contenedor que engloba todos los productos -->  <div class="products-container">    <div class="products-grid">      <!-- Producto 1 -->      <div class="product-item" [routerLink]="[\'/detalles\', 1]">        <div class="product-content"> <!-- Contenedor específico para imagen + info -->          <div class="product-image">            <img src="image/travisfondoblanco.jpg" alt="Producto 1" />          </div>          <h3>Jordan 1 Retro High OG</h3>          <p class="price">539.99€</p>        </div>      </div>      <!-- Producto 2 -->      <div class="product-item" [routerLink]="[\'/detalles\', 2]">        <div class="product-content">          <div class="product-image">            <img src="image/kayano14.jpg" alt="Producto 2" />          </div>          <h3>Asics Kayano 14</h3>          <p class="price">159.99€</p>        </div>      </div>      <!-- Producto 3 -->      <div class="product-item" [routerLink]="[\'/detalles\', 3]">        <div class="product-content">          <div class="product-image">            <img src="image/maison.png" alt="Producto 3" />          </div>          <h3>Maison Mihara Yasuhiro</h3>          <p class="price">249.99€</p>        </div>      </div>      <!-- Producto 4 -->      <div class="product-item" [routerLink]="[\'/detalles\', 4]">        <div class="product-content">          <div class="product-image">            <img src="image/yeezyfoamrunner.jpg" alt="Producto 4" />          </div>          <h3>Yeezy foam runner</h3>          <p class="price">59.99€</p>        </div>      </div>    </div>  </div></section><!-- Sección intermedia: beneficios --><section class="benefits-section">  <ul class="benefits-list">    <li>Materiales de calidad</li>    <li>Devolución rápida</li>    <li>Envíos 48 horas</li>  </ul></section><!-- Sección inferior con video --><section class="video-section">  <div class="video-container">    <!-- Contenedor del primer video -->    <div id="player1"></div>    <!-- Contenedor del segundo video -->    <div id="player2"></div>  </div></section><!-- Sección con información de la empresa --><!-- Sección de información de la empresa --><section class="company-info">  <!-- Imagen izquierda -->  <div class="company-image left">    <img src="image/fondotienda.webp" alt="Nuestra empresa">  </div>  <!-- Descripción de la empresa -->  <div class="company-description">    <h3>Sobre nuestra empresa</h3>    <p>      En Sneakers, nos especializamos en traer las zapatillas más exclusivas       y codiciadas del mercado. Trabajamos con marcas reconocidas y garantizamos       calidad, autenticidad y el mejor servicio.    </p>    <a href="/catalogo" class="btn-detalle">Ver catálogo →</a>  </div>  <!-- Imagen derecha -->  <div class="company-image right">    <img src="image/fondotienda2.png" alt="Equipo de trabajo">  </div></section></div>'
+    var COMPONENTS = [{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'CatalogoComponent', 'selector': 'app-catalogo'},{'name': 'CestaComponent', 'selector': 'app-cesta'},{'name': 'ContactaComponent', 'selector': 'app-contacto'},{'name': 'DetallesProductoComponent', 'selector': 'app-detalles-producto'},{'name': 'FooterComponent', 'selector': 'app-footer'},{'name': 'HeaderComponent', 'selector': 'app-header'},{'name': 'HomeComponent', 'selector': 'app-home'},{'name': 'InterfaceComponent', 'selector': 'app-interface'}];
+    var DIRECTIVES = [];
+    var ACTUAL_COMPONENT = {'name': 'HomeComponent'};
+</script>
+<script src="../js/tree.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                   </div><div class="search-results">
+    <div class="has-results">
+        <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+        <ul class="search-results-list"></ul>
+    </div>
+    <div class="no-results">
+        <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+    </div>
+</div>
+</div>
+               <!-- END CONTENT -->
+           </div>
+       </div>
+
+          <label class="dark-mode-switch">
+               <input type="checkbox">
+               <span class="slider">
+                    <svg class="slider-icon" viewBox="0 0 24 24" fill="none" height="20" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" width="20" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"></path>
+                    </svg>
+               </span>
+          </label>
+
+       <script>
+            var COMPODOC_CURRENT_PAGE_DEPTH = 1;
+            var COMPODOC_CURRENT_PAGE_CONTEXT = 'component';
+            var COMPODOC_CURRENT_PAGE_URL = 'HomeComponent.html';
+            var MAX_SEARCH_RESULTS = 15;
+       </script>
+
+       <script>
+               $darkModeToggleSwitchers = document.querySelectorAll('.dark-mode-switch input');
+               checkToggle(darkModeState);
+               if ($darkModeToggleSwitchers.length > 0) {
+                    for (var i = 0; i < $darkModeToggleSwitchers.length; i++) {
+                         $darkModeToggleSwitchers[i].addEventListener('change', function (event) {
+                              darkModeState = !darkModeState;
+                              toggleDarkMode(darkModeState);
+                         });
+                    }
+               }
+          </script>
+
+       <script src="../js/libs/custom-elements.min.js"></script>
+       <script src="../js/libs/lit-html.js"></script>
+
+       <script src="../js/menu-wc.js" defer></script>
+       <script nomodule src="../js/menu-wc_es5.js" defer></script>
+
+       <script src="../js/libs/bootstrap-native.js"></script>
+
+       <script src="../js/libs/es6-shim.min.js"></script>
+       <script src="../js/libs/EventDispatcher.js"></script>
+       <script src="../js/libs/promise.min.js"></script>
+
+       <script src="../js/compodoc.js"></script>
+
+       <script src="../js/tabs.js"></script>
+       <script src="../js/menu.js"></script>
+       <script src="../js/libs/clipboard.min.js"></script>
+       <script src="../js/libs/prism.js"></script>
+       <script src="../js/sourceCode.js"></script>
+          <script src="../js/search/search.js"></script>
+          <script src="../js/search/lunr.min.js"></script>
+          <script src="../js/search/search-lunr.js"></script>
+          <script src="../js/search/search_index.js"></script>
+       <script src="../js/lazy-load-graphs.js"></script>
+
+
+    </body>
+</html>

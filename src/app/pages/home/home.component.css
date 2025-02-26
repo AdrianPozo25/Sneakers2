@@ -1,0 +1,212 @@
+@import url('https://fonts.googleapis.com/css2?family=Instrument+Sans:wght@400;700&family=Lobster&display=swap');
+
+/* ======= SECCIÓN DE PRODUCTOS DESTACADOS ======= */
+.featured-products {
+  background-color: #D9D9D9;
+  padding: 3rem 2rem;
+  text-align: center;
+}
+
+.featured-products h2 {
+  margin-bottom: 1.5rem;
+  color: #FFFFFF;
+  font-family: 'Instrument Sans', sans-serif; /* Corrección del nombre de la fuente */
+  font-size: 2rem;
+}
+
+/* ======= CONTENEDOR GENERAL DE PRODUCTOS ======= */
+.products-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 2rem;
+  background-color: #D9D9D9;
+}
+
+/* ======= GRID PARA LOS PRODUCTOS ======= */
+.products-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1.5rem;
+}
+
+/* ======= ESTILO DE CADA PRODUCTO ======= */
+.product-item {
+  background-color: #FFFFFF;
+  padding: 1rem;
+  border-radius: 8px;
+  text-align: center;
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Efecto hover: el producto se agranda al pasar el mouse */
+.product-item:hover {
+  transform: scale(1.1);
+  box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.2);
+}
+
+/* ======= CONTENEDOR DE IMAGEN ======= */
+.product-image {
+  width: 100%;
+  height: 200px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  border-radius: 8px;
+  background-color: #FFFFFF;
+}
+
+.product-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+/* ======= ESTILO DEL NOMBRE Y PRECIO ======= */
+.product-item h3 {
+  font-size: 1.2rem;
+  font-family: 'Instrument Sans', sans-serif; /* Aplica la fuente Instrument Sans */
+  font-weight: 700; /* Hace que el título resalte más */
+  margin: 0.5rem 0;
+  color: #333;
+}
+
+.product-item .price {
+  font-size: 1rem;
+  font-family: 'Instrument Sans', sans-serif; /* Aplica la fuente Instrument Sans */
+  font-weight: 600;
+  color: #D97E42;
+}
+
+/* ======= SECCIÓN DE BENEFICIOS ======= */
+.benefits-section {
+  background-color: #0E0E24;
+  padding: 1.5rem 0;
+  color: #fff;
+  text-align: center;
+  
+}
+
+.benefits-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+ 
+}
+
+.benefits-list li {
+  font-size: 1.2rem;
+  font-weight: 600;
+  
+}
+
+/* ======= SECCIÓN INFERIOR (EMPRESA, FOTOS, ETC.) ======= */
+/* ======= SECCIÓN DE INFORMACIÓN DE LA EMPRESA ======= */
+.company-info {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 2rem;
+  padding: 4rem 5%;
+  background-color: #D9D9D9;
+  text-align: center;
+  flex-wrap: wrap; /* Permite que se ajuste en pantallas pequeñas */
+}
+
+/* Contenedores de imágenes */
+.company-image {
+  width: 350px; /* Ajuste de tamaño para mejor visibilidad */
+  height: 350px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.company-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 10px; /* Bordes más suaves */
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+/* Descripción de la empresa */
+.company-description {
+  max-width: 500px;
+  color: #333;
+  font-family: 'Instrument Sans', sans-serif;
+  padding: 1rem;
+  flex: 1; /* Permite que se ajuste mejor */
+}
+
+.company-description h3 {
+  font-size: 2rem;
+  font-weight: bold;
+  margin-bottom: 1rem;
+}
+
+/* Botón de "Ver catálogo" */
+.btn-detalle {
+  display: inline-block;
+  background-color: #D97E42;
+  color: #fff;
+  padding: 0.8rem 1.8rem;
+  border-radius: 6px;
+  text-decoration: none;
+  font-weight: bold;
+  transition: background 0.3s ease, transform 0.2s ease;
+}
+
+.btn-detalle:hover {
+  background-color: #b85e30;
+  transform: scale(1.1);
+}
+
+/* Responsividad para pantallas pequeñas */
+@media (max-width: 1024px) {
+  .company-info {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .company-image {
+    width: 80%;
+    height: auto;
+  }
+
+  .company-description {
+    max-width: 90%;
+  }
+}
+
+
+/* ======= SECCIÓN DEL VIDEO ======= */
+/* ===== SECCIÓN DEL VIDEO ===== */
+.video-section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #D9D9D9;
+  padding: 2rem;
+}
+
+/* Contenedor de los videos */
+.video-container {
+  display: flex;
+  gap: 2rem; /* Espacio entre los videos */
+  justify-content: center;
+  align-items: center;
+}
+
+/* Cada contenedor de video */
+#player1, #player2 {
+  width: 560px;
+  height: 315px;
+  background-color: black; /* Opcional para mejorar el diseño antes de la carga */
+}
+

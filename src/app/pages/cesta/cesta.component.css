@@ -1,0 +1,154 @@
+@import url('https://fonts.googleapis.com/css2?family=Instrument+Sans:wght@400;700&family=Lobster&display=swap');
+
+
+.cesta-container {
+    font-family: 'Instrument Sans', sans-serif;
+    text-align: center;
+    padding: 2rem;
+    background-color: #D9D9D9;
+    min-height: 100vh;
+}
+
+h2 {
+    font-size: 2rem;
+    color: #d97e42;
+}
+
+.cesta-vacia {
+    font-size: 1.2rem;
+    color: #333;
+}
+
+/* Estilo del botón "Seguir Comprando" */
+.btn-seguir {
+    font-family: 'Instrument Sans', sans-serif;
+    background-color: #d97e42;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 8px;
+    border: none;
+    cursor: pointer;
+    transition: transform 0.3s;
+}
+
+.btn-seguir:hover {
+    transform: scale(1.05);
+}
+
+/* Contenedor de los productos en la cesta */
+.cesta-productos {
+    max-width: 600px;
+    margin: auto;
+    background: white;
+    padding: 1rem;
+    border-radius: 8px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Estilo de cada producto */
+.producto {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 1rem;
+}
+
+/* Contenedor de la imagen */
+.producto-imagen {
+    width: 80px;
+    height: 80px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    border-radius: 8px;
+    background-color: transparent;}
+
+/* Imagen del producto */
+.producto-imagen img {
+    display: block; /* Elimina espacios blancos por defecto */
+    width: 100%;
+    height: auto;
+    max-width: 100%;
+    object-fit: contain; /* Asegura que la imagen se muestre correctamente */
+}
+
+.botones-accion {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    margin-top: 1rem;
+  }
+  
+  .btn-pagar {
+    background-color: #28a745;
+    color: white;
+    padding: 10px 15px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 1rem;
+    border: none;
+    transition: background 0.3s ease-in-out;
+  }
+  
+  .btn-pagar:hover {
+    background-color: #218838;
+    transform: scale(1.05);
+  }
+  
+
+
+/* Información del producto */
+.info {
+    text-align: left;
+}
+
+/* Control de cantidad */
+.cantidad {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+
+/* Botones generales */
+button {
+    padding: 5px 10px;
+    border: none;
+    cursor: pointer;
+}
+
+/* Botón eliminar */
+.btn-eliminar {
+    font-family: 'Instrument Sans', sans-serif;
+    background-color: red;
+    color: white;
+    padding: 5px 10px;
+    border-radius: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 10px; /* Espaciado hacia abajo */
+    align-self: center; 
+}
+
+.btn-eliminar:hover {
+    background-color: red;
+    transform: scale(1.05);
+  }
+
+/* Botón vaciar cesta */
+.btn-vaciar {
+    font-family: 'Instrument Sans', sans-serif;
+    background-color: red;
+    color: white;
+    padding: 10px 15px;
+    border-radius: 8px;
+    cursor: pointer;
+    margin-right: 10px;
+}
+
+.btn-vaciar:hover {
+    background-color: red;
+    transform: scale(1.05);
+  }

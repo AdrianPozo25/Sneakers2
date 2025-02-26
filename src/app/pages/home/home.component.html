@@ -1,0 +1,96 @@
+<!-- Sección de Productos Destacados -->
+<section class="featured-products">
+  <h2>Los sneakers a mejor precio de todo el mercado</h2>
+
+  <!-- Nuevo contenedor que engloba todos los productos -->
+  <div class="products-container">
+    <div class="products-grid">
+      <!-- Producto 1 -->
+      <div class="product-item" [routerLink]="['/detalles', 1]">
+        <div class="product-content"> <!-- Contenedor específico para imagen + info -->
+          <div class="product-image">
+            <img src="image/travisfondoblanco.jpg" alt="Producto 1" />
+          </div>
+          <h3>Jordan 1 Retro High OG</h3>
+          <p class="price">539.99€</p>
+        </div>
+      </div>
+      <!-- Producto 2 -->
+      <div class="product-item" [routerLink]="['/detalles', 2]">
+        <div class="product-content">
+          <div class="product-image">
+            <img src="image/kayano14.jpg" alt="Producto 2" />
+          </div>
+          <h3>Asics Kayano 14</h3>
+          <p class="price">159.99€</p>
+        </div>
+      </div>
+      <!-- Producto 3 -->
+      <div class="product-item" [routerLink]="['/detalles', 3]">
+        <div class="product-content">
+          <div class="product-image">
+            <img src="image/maison.png" alt="Producto 3" />
+          </div>
+          <h3>Maison Mihara Yasuhiro</h3>
+          <p class="price">249.99€</p>
+        </div>
+      </div>
+      <!-- Producto 4 -->
+      <div class="product-item" [routerLink]="['/detalles', 4]">
+        <div class="product-content">
+          <div class="product-image">
+            <img src="image/yeezyfoamrunner.jpg" alt="Producto 4" />
+          </div>
+          <h3>Yeezy foam runner</h3>
+          <p class="price">59.99€</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Sección intermedia: beneficios -->
+<section class="benefits-section">
+  <ul class="benefits-list">
+    <li>Materiales de calidad</li>
+    <li>Devolución rápida</li>
+    <li>Envíos 48 horas</li>
+  </ul>
+</section>
+
+<!-- Sección inferior con video -->
+<section class="video-section">
+  <div class="video-container">
+    <!-- Contenedor del primer video -->
+    <div id="player1"></div>
+    <!-- Contenedor del segundo video -->
+    <div id="player2"></div>
+  </div>
+</section>
+
+<!-- Sección con información de la empresa -->
+<!-- Sección de información de la empresa -->
+<section class="company-info">
+  <!-- Imagen izquierda -->
+  <div class="company-image left">
+    <img src="image/fondotienda.webp" alt="Nuestra empresa">
+  </div>
+
+  <!-- Descripción de la empresa -->
+  <div class="company-description">
+    <h3>Sobre nuestra empresa</h3>
+    <p>
+      En Sneakers, nos especializamos en traer las zapatillas más exclusivas 
+      y codiciadas del mercado. Trabajamos con marcas reconocidas y garantizamos 
+      calidad, autenticidad y el mejor servicio.
+    </p>
+    <a href="/catalogo" class="btn-detalle">Ver catálogo →</a>
+  </div>
+
+  <!-- Imagen derecha -->
+  <div class="company-image right">
+    <img src="image/fondotienda2.png" alt="Equipo de trabajo">
+  </div>
+</section>
+
+

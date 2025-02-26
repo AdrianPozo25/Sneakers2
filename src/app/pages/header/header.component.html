@@ -1,0 +1,27 @@
+<header class="header lobster-regular">
+    <!-- Logo -->
+    <div class="header__logo">
+      <a routerLink="/" routerLinkActive="active">Sneakers</a>
+    </div>
+  
+    <!-- Navegación -->
+    <nav class="header__nav">
+      <ul class="header__menu">
+        <li><a routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">Inicio</a></li>
+        <li><a routerLink="/catalogo">Catálogo</a></li>
+        <li><a routerLink="/contacta">Contacto</a></li>
+          </ul>
+  
+      <!-- Separador -->
+      <div class="header__divider"></div>
+  
+      <!-- Cesta -->
+      <div class="header__cesta">
+        <a routerLink="/cesta" routerLinkActive="active">
+          <span>Cesta</span>
+          <img class="imagen_cesta" src="image/cesta.png" alt="Icono de la cesta">
+        </a>
+      </div>
+    </nav>
+  </header>
+  

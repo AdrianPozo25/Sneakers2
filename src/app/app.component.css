@@ -1,0 +1,21 @@
+/* Reseteo global mínimo */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  /* Asegura que todo el documento use el fondo gris */
+  html,
+  body {
+    background-color: #D9D9D9;
+    height: 100%; /* no siempre necesario, pero puede ayudar en ciertos layouts */
+  }
+  
+  /* (Opcional) Contenedor principal con alto mínimo de la ventana */
+  .main-content {
+    background-color: #D9D9D9; 
+    min-height: 100vh; /* Para ocupar al menos la altura completa de la pantalla */
+    padding: 0rem;     /* Ajusta si quieres algo de espacio interior */
+  }
+  
