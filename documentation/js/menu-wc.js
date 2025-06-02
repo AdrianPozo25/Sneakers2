@@ -96,13 +96,13 @@ customElements.define('compodoc-menu', class extends HTMLElement {
                                 <a href="modules/InterfaceModule.html" data-type="entity-link" >InterfaceModule</a>
                                     <li class="chapter inner">
                                         <div class="simple menu-toggler" data-bs-toggle="collapse" ${ isNormalMode ?
-                                            'data-bs-target="#components-links-module-InterfaceModule-fe00269e1b49c99b380f48d98abcbb320841b1f8c112c5bd5bf9ff169900b0f213baa353422437c9a3cab99d54d3f9a163ccc180180f03a22eefac4eecc36d96"' : 'data-bs-target="#xs-components-links-module-InterfaceModule-fe00269e1b49c99b380f48d98abcbb320841b1f8c112c5bd5bf9ff169900b0f213baa353422437c9a3cab99d54d3f9a163ccc180180f03a22eefac4eecc36d96"' }>
+                                            'data-bs-target="#components-links-module-InterfaceModule-0e50c16398273ea593a5e9ebb063df6d5f1774b9bbb3be747595bd0e65cb8462bc1dc0516a984c1494760a89596fa279dea09f02260d249f2623916b3860f0dd"' : 'data-bs-target="#xs-components-links-module-InterfaceModule-0e50c16398273ea593a5e9ebb063df6d5f1774b9bbb3be747595bd0e65cb8462bc1dc0516a984c1494760a89596fa279dea09f02260d249f2623916b3860f0dd"' }>
                                             <span class="icon ion-md-cog"></span>
                                             <span>Components</span>
                                             <span class="icon ion-ios-arrow-down"></span>
                                         </div>
-                                        <ul class="links collapse" ${ isNormalMode ? 'id="components-links-module-InterfaceModule-fe00269e1b49c99b380f48d98abcbb320841b1f8c112c5bd5bf9ff169900b0f213baa353422437c9a3cab99d54d3f9a163ccc180180f03a22eefac4eecc36d96"' :
-                                            'id="xs-components-links-module-InterfaceModule-fe00269e1b49c99b380f48d98abcbb320841b1f8c112c5bd5bf9ff169900b0f213baa353422437c9a3cab99d54d3f9a163ccc180180f03a22eefac4eecc36d96"' }>
+                                        <ul class="links collapse" ${ isNormalMode ? 'id="components-links-module-InterfaceModule-0e50c16398273ea593a5e9ebb063df6d5f1774b9bbb3be747595bd0e65cb8462bc1dc0516a984c1494760a89596fa279dea09f02260d249f2623916b3860f0dd"' :
+                                            'id="xs-components-links-module-InterfaceModule-0e50c16398273ea593a5e9ebb063df6d5f1774b9bbb3be747595bd0e65cb8462bc1dc0516a984c1494760a89596fa279dea09f02260d249f2623916b3860f0dd"' }>
                                             <li class="link">
                                                 <a href="components/InterfaceComponent.html" data-type="entity-link" data-context="sub-entity" data-context-id="modules" >InterfaceComponent</a>
                                             </li>

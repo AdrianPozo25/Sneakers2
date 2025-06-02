@@ -185,3 +185,64 @@
   line-height: 1.6;
   color: #333;
 }
+
+.product-info select {
+  width: 100%;
+  padding: 0.5rem 0.8rem;
+  margin-bottom: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  background-color: #fff;
+  font-size: 1rem;
+  color: #333;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  transition: border 0.3s ease;
+}
+
+.product-info select:focus {
+  border-color: #d97e42;
+  outline: none;
+}
+
+.product-info label {
+  display: block;
+  margin-top: 1rem;
+  margin-bottom: 0.3rem;
+  font-weight: 600;
+  color: #333;
+  font-size: 0.95rem;
+}
+.selector-container {
+  margin-bottom: 1.2rem;
+}
+
+.chip-group {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+  margin-top: 0.5rem;
+}
+
+.chip {
+  background-color: white;
+  color: #d97e42;
+  border: 2px solid #d97e42;
+  border-radius: 20px;
+  padding: 0.4rem 1rem;
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  font-weight: 500;
+}
+
+.chip:hover {
+  background-color: #f7e7df;
+}
+
+.chip.selected {
+  background: linear-gradient(to right, #fca253, #d97e42);
+  color: white;
+  border-color: transparent;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+}
+

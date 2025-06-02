@@ -1,0 +1,83 @@
+@import url('https://fonts.googleapis.com/css2?family=Instrument+Sans:wght@400;700&family=Lobster&display=swap');
+
+body {
+  background-color: #dddddd; /* igual que el fondo del header */
+  margin: 0;
+  font-family: 'Instrument Sans', sans-serif;
+}
+
+.lanzamientos-container {
+  padding: 2rem;
+  background-color: #dddddd;
+  font-family: 'Instrument Sans', sans-serif;
+
+}
+
+.lanzamientos-container h2 {
+  font-size: 2rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: #333;
+  font-family: 'Instrument Sans', sans-serif;
+
+}
+
+.lanzamiento-card {
+  background-color: white;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+  padding: 1.5rem;
+  margin-bottom: 1.5rem;
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  transition: transform 0.2s;
+  font-family: 'Instrument Sans', sans-serif;
+}
+
+.lanzamiento-card:hover {
+  transform: scale(1.01);
+  font-family: 'Instrument Sans', sans-serif;
+}
+
+.lanzamiento-card img {
+  width: 100px;
+  height: auto;
+  border-radius: 8px;
+  object-fit: contain;
+}
+
+.lanzamiento-info {
+  flex-grow: 1;
+  font-family: 'Instrument Sans', sans-serif;
+}
+
+.lanzamiento-info h3 {
+  margin: 0;
+  font-size: 1.2rem;
+  color: #222;
+}
+
+.lanzamiento-info p {
+  margin: 0.3rem 0;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: #444;
+}
+
+.notificar-btn {
+  background-color: #d97e42;
+  color: white;
+  padding: 0.5rem 1.2rem;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  font-family: 'Instrument Sans', sans-serif;
+}
+
+.notificar-btn:hover {
+  background-color: #c06c35;
+}

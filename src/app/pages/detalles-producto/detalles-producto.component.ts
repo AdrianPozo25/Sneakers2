@@ -3,7 +3,6 @@ import { ActivatedRoute } from '@angular/router';
 import { CestaService } from '../../services/cesta.servicio/cesta.service'; 
 import { CommonModule } from '@angular/common';
 import Swal from 'sweetalert2';
-import { ProductDescriptionService } from '../../services/product-description.service'; 
 
 
 
@@ -21,173 +20,203 @@ export class DetallesProductoComponent implements OnInit {
   autoSlide: any; // Intervalo para el auto-slide de imágenes
   descripcion: string = 'Cargando descripción...'; // Mensaje de carga para la descripción del producto
 
+  tallaSeleccionada = '';
+  colorSeleccionado = '';
+
 
   productos = [
     {
       id: 1, 
       nombre: 'Jordan 1 Retro High OG', 
       precio: 539.99, 
-      talla: '42', 
-      color: 'Marrón/Negro',
+      tallas: [42, 43, 46], 
+      colores: ['Marrón/Negro', 'Azul/Blanco'],
       imagenes: ['image/travisfondoblanco.jpg', 'image/travisfondoblanco2.jpg'],
+      descripcion: 'Un clásico atemporal del baloncesto y la moda urbana, este modelo combina cuero de alta calidad con el icónico diseño de la primera zapatilla de Michael Jordan. Su silueta versátil y su comodidad lo convierten en un imprescindible para coleccionistas y sneakerheads.'
+      
     },
     {
       id: 2, 
       nombre: 'Asics Kayano 14', 
       precio: 159.99, 
-      talla: '44', 
-      color: 'Blanco/Azul',
+      tallas: [42, 44,45, 46], 
+      colores: ['Blanco', 'Rojo'],
       imagenes: ['image/kayano14.jpg', 'image/kayano142.jpg'],
+      descripcion: 'Una zapatilla de running con tecnología GEL, diseñada para ofrecer máxima estabilidad y amortiguación. Su estética retro y materiales de alta durabilidad la han convertido en un referente tanto en el mundo deportivo como en el streetwear.'
     },
     {
       id: 3, 
       nombre: 'Maison Mihara Yasuhiro', 
       precio: 249.99, 
-      talla: '43', 
-      color: 'Negro/Blanco',
+      tallas: [42, 43, 46], 
+      colores: ['Marrón/Negro', 'Azul/Blanco'],
       imagenes: ['image/maison.png', 'image/maison2.png'],
+      descripcion: 'Conocida por su enfoque vanguardista y suela exagerada, esta silueta reinventa el diseño clásico de zapatillas con un toque artesanal. Su apariencia desgastada y detalles únicos la convierten en una pieza de arte dentro del mundo del calzado.'
     },
     {
       id: 4, 
       nombre: 'Yeezy Foam Runner', 
       precio: 59.99, 
-      talla: '42', 
-      color: 'Arena',
+      tallas: [42, 43, 46], 
+      colores: ['Marrón/Negro', 'Azul/Blanco'],
       imagenes: ['image/yeezyfoamrunner.jpg', 'image/yeezyfoamrunner2.jpg'],
+      descripcion: 'Una de las creaciones más innovadoras de Kanye West, estas zapatillas sin cordones y de estructura hueca están hechas de una mezcla de algas y espuma EVA. Su diseño futurista y comodidad extrema las han convertido en un éxito instantáneo.'
     },
     { id: 5, 
       nombre: 'Nike Dunk Low Panda', 
       precio: 149.99, 
-      talla: '42', 
-      color: 'Blanco/Negro',
-      imagenes: ['image/panda1.png', 'image/panda2.png'] 
+      tallas: [42, 43, 46], 
+      colores: ['Marrón/Negro', 'Azul/Blanco'],
+      imagenes: ['image/panda1.png', 'image/panda2.png'],
+      descripcion: 'Con su esquema de colores en blanco y negro, esta versión de los Dunk Low es una de las más populares por su versatilidad y estilo minimalista. Su diseño limpio y materiales resistentes la hacen ideal para el uso diario.'
     },
 
     { id: 6, 
       nombre: 'New Balance 1906R', 
       precio: 129.99, 
-      talla: '42', 
-      color: 'Gris/Blanco',
-      imagenes: ['image/nb1906.jpg', 'image/nb19062.jpg'] },
+      tallas: [42, 43, 46], 
+      colores: ['Marrón/Negro', 'Azul/Blanco'],
+      imagenes: ['image/nb1906.jpg', 'image/nb19062.jpg'],
+      descripcion: 'Inspirada en los modelos de running de los 2000, esta zapatilla destaca por su tecnología de amortiguación ABZORB y su estética retrofuturista. Es una opción cómoda y funcional tanto para la moda casual como para el deporte.'
+   },
 
     { id: 7, 
       nombre: 'Air Max 95 x Corteiz', 
       precio: 179.99, 
-      talla: '42', 
-      color: 'Negro/Azul',
-      imagenes: ['image/corteizblue.jpg', 'image/corteizblue2.jpg'] },
+      tallas: [42, 43, 46], 
+      colores: ['Marrón/Negro', 'Azul/Blanco'],
+      imagenes: ['image/corteizblue.jpg', 'image/corteizblue2.jpg'], 
+      descripcion: 'Un modelo colaborativo que mezcla la icónica silueta del Air Max 95 con la identidad callejera de la marca británica Corteiz. Su combinación de materiales premium y colores llamativos la hacen destacar en cualquier outfit.'
+    },
+      
 
     { id: 8, nombre: 'Dior B30', 
       precio: 899.99, 
-      talla: '42', 
-      color: 'Negro/Plata',
-      imagenes: ['image/b30black.jpg', 'image/b30black2.jpg'] },
+      tallas: [42, 43, 46], 
+      colores: ['Marrón/Negro', 'Azul/Blanco'],
+      imagenes: ['image/b30black.jpg', 'image/b30black2.jpg'],
+      descripcion: 'Una sneaker de lujo con diseño aerodinámico y detalles refinados. Su construcción con materiales de alta calidad y su estilo inspirado en el running la convierten en un símbolo de elegancia moderna.'
+   },
 
     { id: 9, 
       nombre: 'Adidas Samba OG', 
       precio: 109.99, 
-      talla: '42', 
-      color: 'Blanco/Negro',
-      imagenes: ['image/samba.webp', 'image/samba2.webp'] },
+      tallas: [42, 43, 46], 
+      colores: ['Marrón/Negro', 'Azul/Blanco'],
+      imagenes: ['image/samba.webp', 'image/samba2.webp'],
+      descripcion: 'Una de las zapatillas más icónicas de Adidas, diseñada originalmente para el fútbol sala y convertida en un clásico del estilo urbano. Su combinación de cuero y gamuza, junto con su suela de goma, ofrece una estética vintage atemporal.'
+   },
 
     { id: 10, 
       nombre: 'Salomon XT-6', 
       precio: 169.99, 
-      talla: '42', 
-      color: 'Gris/Negro',
-      imagenes: ['image/salomon.jpg', 'image/salomon2.jpg'] },
+      tallas: [42, 43, 46], 
+      colores: ['Marrón/Negro', 'Azul/Blanco'],
+      imagenes: ['image/salomon.jpg', 'image/salomon2.jpg'],
+      descripcion: 'Diseñada para el trail running, esta zapatilla cuenta con tecnología de amortiguación ACS y suela Contagrip para máximo agarre. Su popularidad ha crecido en el mundo de la moda gracias a su estética técnica y funcional.'
+   },
 
     { id: 11, 
       nombre: 'Puma MB.02 Lamelo Ball', 
       precio: 79.99, 
-      talla: '42', 
-      color: 'Rosa/Negro',
-      imagenes: ['image/melo.webp', 'image/melo2.webp'] },
+      tallas: [42, 43, 46], 
+      colores: ['Marrón/Negro', 'Azul/Blanco'],
+      imagenes: ['image/melo.webp', 'image/melo2.webp'],
+      descripcion: 'La segunda edición de la línea exclusiva de LaMelo Ball, con un diseño llamativo y una tecnología de amortiguación avanzada. Su combinación de colores vibrantes y construcción ligera la hacen perfecta para el baloncesto y el estilo casual.'
+   },
 
     { id: 12, 
       nombre: 'Converse Chuck 70 CDG', 
       precio: 189.99, 
-      talla: '42', 
-      color: 'Azul/Negro',
-      imagenes: ['image/cdg.webp', 'image/cdg2.webp'] },
+      tallas: [42, 43, 46], 
+      colores: ['Marrón/Negro', 'Azul/Blanco'],
+      imagenes: ['image/cdg.webp', 'image/cdg2.webp'],
+      descripcion: 'La colaboración entre Converse y Comme des Garçons ha dado como resultado una versión premium de las clásicas Chuck 70, con el icónico logo del corazón con ojos y materiales de mejor calidad para mayor durabilidad.' },
 
       { 
         id: 13, 
         nombre: 'Balenciaga Track', 
         precio: 899.99, 
-        talla: '42', 
-        color: 'Negro', 
-        imagenes: ['image/balen.jpg', 'image/balen2.jpg'] 
+        tallas: [42, 43, 46], 
+        colores: ['Marrón/Negro', 'Azul/Blanco'], 
+        imagenes: ['image/balen.jpg', 'image/balen2.jpg'],
+        descripcion: 'Una zapatilla chunky de lujo con una construcción compleja de múltiples capas y un diseño agresivo. Su combinación de materiales técnicos y estética maximalista la han convertido en un referente de la moda contemporánea.' 
       },
       
       { 
         id: 14, 
         nombre: 'Nike Air Force 1', 
         precio: 119.99, 
-        talla: '42', 
-        color: 'Blanco', 
-        imagenes: ['image/af1.jpg', 'image/af12.jpg'] 
+        tallas: [42, 43, 46], 
+        colores: ['Marrón/Negro', 'Azul/Blanco'], 
+        imagenes: ['image/af1.jpg', 'image/af12.jpg'],
+        descripcion: 'Una de las zapatillas más reconocidas y usadas en el mundo, su diseño minimalista y suela Air la convierten en un básico del streetwear. Su versatilidad permite combinarla con prácticamente cualquier outfit.' 
       },
       
       { 
         id: 15, 
         nombre: 'Jordan 4 Retro', 
         precio: 299.99, 
-        talla: '42', 
-        color: 'Blanco/Verde', 
-        imagenes: ['image/j4.avif', 'image/j42.avif'] 
+        tallas: [42, 43, 46], 
+        colores: ['Marrón/Negro', 'Azul/Blanco'], 
+        imagenes: ['image/j4.avif', 'image/j42.avif'],
+        descripcion: 'Con su diseño robusto y detalles icónicos como las alas laterales y la unidad Air visible, el Jordan 4 es un modelo legendario dentro de la línea de Michael Jordan. Su combinación de confort y estilo lo hace un favorito entre coleccionistas.' 
       },
       
       { 
         id: 16, 
         nombre: 'Vans Old Skool x Fear of God', 
         precio: 75.99, 
-        talla: '42', 
-        color: 'Blanco/Negro', 
-        imagenes: ['image/vans.webp', 'image/vans2.webp'] 
+        tallas: [42, 43, 46], 
+        colores: ['Marrón/Negro', 'Azul/Blanco'], 
+        imagenes: ['image/vans.webp', 'image/vans2.webp'],
+        descripcion: 'Esta colaboración entre Vans y Fear of God añade detalles premium a la clásica silueta Old Skool, incluyendo materiales de mejor calidad y un diseño con patrones exclusivos. Es un modelo muy buscado por los fans del streetwear.' 
       },
       
       { 
         id: 17, 
         nombre: 'Nike Blazer Mid 77', 
         precio: 119.99, 
-        talla: '42', 
-        color: 'Blanco/Gris', 
-        imagenes: ['image/blaz.avif', 'image/blaz2.avif'] 
+        tallas: [42, 43, 46], 
+        colores: ['Marrón/Negro', 'Azul/Blanco'], 
+        imagenes: ['image/blaz.avif', 'image/blaz2.avif'] ,
+        descripcion: 'Una zapatilla clásica con un diseño vintage que recuerda la época dorada del baloncesto. Su construcción en cuero y gamuza, junto con su suela de goma vulcanizada, la hacen una opción elegante y duradera.'
       },
       
       { 
         id: 18, 
         nombre: 'Off-White x Nike Dunk', 
         precio: 650.00, 
-        talla: '42', 
-        color: 'Gris/Naranja', 
-        imagenes: ['image/off.jpg', 'image/off2.jpg'] 
+        tallas: [42, 43, 46], 
+        colores: ['Marrón/Negro', 'Azul/Blanco'], 
+        imagenes: ['image/off.jpg', 'image/off2.jpg'] ,
+        descripcion: 'Una de las colaboraciones más icónicas de Virgil Abloh, con un diseño desestructurado, detalles industriales y el característico sistema de doble cordón. Es una pieza de colección muy codiciada por los sneakerheads.'
       },
       
       { 
         id: 19, 
         nombre: 'New Balance 990 V5', 
         precio: 199.99, 
-        talla: '42', 
-        color: 'Gris', 
-        imagenes: ['image/nb990.avif', 'image/nb9902.avif'] 
+        tallas: [42, 43, 46], 
+        colores: ['Marrón/Negro', 'Azul/Blanco'], 
+        imagenes: ['image/nb990.avif', 'image/nb9902.avif'],
+        descripcion: 'Conocida por su confort y calidad premium, esta zapatilla hecha en EE.UU. es un referente en el mundo del calzado casual. Su diseño sencillo pero sofisticado la hace ideal tanto para la moda como para la funcionalidad.' 
       },
 
       { 
         id: 20, 
         nombre: 'Rick Owens Jumbo', 
         precio: 999.99, 
-        talla: '42', 
-        color: 'Negro/Blanco', 
-        imagenes: ['image/ro.jpg', 'image/ro2.jpg'] 
+        tallas: [42, 43, 46], 
+        colores: ['Marrón/Negro', 'Azul/Blanco'], 
+        imagenes: ['image/ro.jpg', 'image/ro2.jpg'],
+        descripcion: 'Una reinterpretación extrema de las zapatillas de skate con suela oversized y una estética avant-garde. Su diseño disruptivo y materiales de lujo la convierten en una pieza clave dentro del high fashion.' 
       }
 ];
 
 constructor(
   private route: ActivatedRoute, // Para obtener el ID del producto desde la URL
   private cestaService: CestaService, // Servicio para gestionar la cesta de compras
-  private productDescriptionService: ProductDescriptionService // Servicio para obtener la descripción del producto
 ) {} 
 
 ngOnInit(): void {
@@ -196,15 +225,7 @@ ngOnInit(): void {
   if (!this.producto) return; // Si no se encuentra, salir
 
   // Obtener la descripción del producto desde una API simulada (Fake API)
-  this.productDescriptionService.obtenerDescripcionProducto(id).subscribe(
-    (data) => {
-      this.descripcion = data.descripcion || 'Descripción no disponible.'; // Asignar la descripción recibida
-    },
-    (error) => {
-      console.error('Error al obtener la descripción:', error);
-      this.descripcion = 'No se pudo obtener la descripción.'; // Mensaje de error en caso de fallo
-    }
-  );
+ 
 
   // Iniciar el auto-slide si el producto tiene más de una imagen
   if (this.producto.imagenes.length > 1) {
@@ -250,16 +271,31 @@ reiniciarAutoSlide() {
 
 // Método para añadir el producto a la cesta de compras
 agregarACesta() {
-  this.cestaService.agregarProducto(this.producto); // Llamar al servicio de la cesta
-  console.log('Producto añadido a la cesta:', this.producto);
+  if (!this.tallaSeleccionada || !this.colorSeleccionado) {
+    Swal.fire({
+      icon: 'warning',
+      title: 'Selecciona talla y color',
+      text: 'Debes seleccionar una talla y un color antes de añadir a la cesta.',
+      confirmButtonColor: '#d97e42'
+    });
+    return;
+  }
 
-  // Mostrar notificación con SweetAlert2
+  const productoSeleccionado = {
+    ...this.producto,
+    tallaSeleccionada: this.tallaSeleccionada,
+    colorSeleccionado: this.colorSeleccionado,
+    cantidad: 1
+  };
+
+  this.cestaService.agregarProducto(productoSeleccionado);
+
   Swal.fire({
     icon: 'success',
     title: '¡Añadido!',
-    text: 'El producto ha sido añadido a tu cesta.',
-    confirmButtonColor: '#d97e42',
-    confirmButtonText: 'OK'
+    text: 'Producto añadido a tu cesta.',
+    confirmButtonColor: '#d97e42'
   });
 }
+
 }

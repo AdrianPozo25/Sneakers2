@@ -19,6 +19,8 @@
         <div class="info">
           <h3>{{ producto.nombre }}</h3>
           <p>{{ producto.precio }}€</p>
+          <p><strong>Talla:</strong> {{ producto.tallaSeleccionada || '—' }}</p>
+          <p><strong>Color:</strong> {{ producto.colorSeleccionado || '—' }}</p>
           <div class="cantidad">
             <button (click)="cambiarCantidad(producto.id, -1)">➖</button>
             <span>{{ producto.cantidad }}</span>
@@ -26,6 +28,7 @@
           </div>
           <button class="btn-eliminar" (click)="eliminarProducto(producto.id)">🗑️ Eliminar</button>
         </div>
+        
       </div>
 
       <!-- Total y botón de vaciar cesta -->

@@ -9,6 +9,12 @@ import { HomeComponent } from './home/home.component';
 import { CatalogoComponent } from './catalogo/catalogo.component';
 import { ContactaComponent } from './contacta/contacta.component';
 import { CestaComponent } from './cesta/cesta.component';
+import { LoginComponent } from './login/login.component';
+import { RegisterComponent } from './register/register.component';
+import { DetallesProductoComponent } from './detalles-producto/detalles-producto.component';
+import { LanzamientosComponent } from './lanzamientos/lanzamientos.component';
+import { MiCuentaComponent } from './mi-cuenta/mi-cuenta.component';
+
 
 @NgModule({
   declarations: [
@@ -17,7 +23,12 @@ import { CestaComponent } from './cesta/cesta.component';
     HomeComponent,
     CatalogoComponent,
     ContactaComponent,
-    CestaComponent
+    CestaComponent,
+    LoginComponent,
+    RegisterComponent,
+    DetallesProductoComponent,
+    LanzamientosComponent,
+    MiCuentaComponent
   ],
   imports: [
     CommonModule,

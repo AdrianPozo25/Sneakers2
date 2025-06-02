@@ -1,0 +1,72 @@
+<div class="auth-container">
+    <h2>Registrarse</h2>
+  
+    <form (ngSubmit)="register()" class="auth-form">
+      <div class="form-group">
+        <label for="username">Nombre de usuario</label>
+        <div class="input-icon">
+          <span>👤</span>
+          <input id="username" type="text" [(ngModel)]="username" name="username" required />
+        </div>
+      </div>
+  
+      <div class="form-group">
+        <label for="email">Email</label>
+        <div class="input-icon" [ngClass]="{ 'input-error': email && !isEmailValid(email) }">
+          <span>✉️</span>
+          <input
+            id="email"
+            type="email"
+            [(ngModel)]="email"
+            name="email"
+            required
+          />
+        </div>
+        <small class="field-warning" *ngIf="email && !isEmailValid(email)">
+            Ingresa un email válido (por ejemplo, usuario&#64;gmail.com)
+        </small>
+      </div>
+  
+      <div class="form-group">
+        <label for="password">Contraseña</label>
+        <div class="input-icon">
+          <span>🔒</span>
+          <input id="password" type="password" [(ngModel)]="password" name="password" required />
+        </div>
+      </div>
+  
+      <div class="form-group">
+        <label for="confirmPassword">Repetir contraseña</label>
+        <div class="input-icon" [ngClass]="{ 'input-error': confirmPassword && confirmPassword !== password }">
+          <span>🔁</span>
+          <input
+            id="confirmPassword"
+            type="password"
+            [(ngModel)]="confirmPassword"
+            name="confirmPassword"
+            required
+          />
+        </div>
+        <small class="field-warning" *ngIf="confirmPassword && confirmPassword !== password">
+          Las contraseñas no coinciden
+        </small>
+      </div>
+      
+  
+      <div class="error-message" *ngIf="errorMessage">{{ errorMessage }}</div>
+  
+      <button
+  type="submit"
+  class="auth-btn"
+  [disabled]="!username || !email || !password || !confirmPassword || !isEmailValid(email) || confirmPassword !== password">
+  Registrarse
+</button>
+
+    </form>
+  
+    <p class="auth-footer">
+      ¿Ya tienes cuenta?
+      <a routerLink="/login">Inicia sesión</a>
+    </p>
+  </div>
+  

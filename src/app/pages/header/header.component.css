@@ -118,3 +118,143 @@
     width: 30px;
     margin-top: -0.5px;
 }
+
+/* ===== LOGIN & REGISTRO ===== */
+.header__auth {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+    margin-left: 1rem;
+}
+
+.header__auth a {
+    text-decoration: none;
+    color: var(--color-orange);
+    font-size: 1rem;
+    font-weight: 500;
+    transition: transform 0.3s ease-in-out, color 0.3s ease-in-out;
+    font-family: "Lobster", serif;
+}
+
+/* Hover efecto igual que los demás */
+.header__auth a:hover {
+    transform: scale(1.2);
+    color: black;
+}
+.auth-username {
+    font-size: 1rem;
+    font-weight: 500;
+    color: var(--color-orange);
+    margin-right: 1rem;
+    font-family: "Lobster", serif;
+  }
+  
+  .logout-btn {
+    background: none;
+    border: none;
+    color: var(--color-orange);
+    font-weight: 500;
+    font-size: 1rem;
+    cursor: pointer;
+    font-family: "Lobster", serif;
+    transition: transform 0.3s ease-in-out, color 0.3s ease-in-out;
+  }
+  
+  .logout-btn:hover {
+    transform: scale(1.1);
+    color: black;
+  }
+
+ /* ===== USUARIO LOGUEADO ===== */
+.header__user-box {
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+    background: linear-gradient(to right, #fca253, #d97e42);
+    border-radius: 2rem;
+    padding: 0.3rem 0.8rem;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.12);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    height: 40px;
+    position: relative;
+    cursor: pointer;
+  }
+  
+  .header__user-avatar {
+    width: 28px;
+    height: 28px;
+    background-color: #fff;
+    color: #d97e42;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    font-size: 0.9rem;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  }
+  
+
+  .logo-img {
+  height: 60px;
+  width: auto;
+  display: block;
+  }
+
+  .header__user-name {
+    color: white;
+    font-weight: 600;
+    font-size: 0.9rem;
+    letter-spacing: 0.4px;
+  }
+  
+  /* ===== MENÚ DESPLEGABLE ===== */
+  .header__dropdown {
+    position: absolute;
+    top: 120%;
+    right: 0;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    display: flex;
+    flex-direction: column;
+    min-width: 160px;
+    z-index: 10;
+    overflow: hidden;
+    animation: dropdownFade 0.2s ease-out;
+  }
+  
+  
+  .header__dropdown a,
+  .header__dropdown button {
+    padding: 0.6rem 1rem;
+    text-align: left;
+    background: none;
+    border: none;
+    font-size: 0.9rem;
+    font-weight: 500;
+    color: #333;
+    font-family: 'Segoe UI', sans-serif;
+    transition: background 0.2s ease;
+    cursor: pointer;
+  }
+  
+  .header__dropdown a:hover,
+  .header__dropdown button:hover {
+    background-color: #f5f5f5;
+  }
+  @keyframes dropdownFade {
+    from {
+      opacity: 0;
+      transform: translateY(-5px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  
+  
+  
+  

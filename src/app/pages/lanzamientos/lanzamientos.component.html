@@ -1,0 +1,13 @@
+<div class="lanzamientos-container">
+  <h2>📦 Próximos lanzamientos</h2>
+
+  <div class="lanzamiento-card" *ngFor="let item of lanzamientos">
+    <img [src]="item.imagen" [alt]="item.nombre">
+    <div class="lanzamiento-info">
+      <h3>{{ item.nombre }}</h3>
+      <p>📅 Lanzamiento: {{ item.fecha }}</p>
+      <p>💸 Precio estimado: {{ item.precio }}€</p>
+    </div>
+    <button class="notificar-btn">Notificarme</button>
+  </div>
+</div>

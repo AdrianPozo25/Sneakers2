@@ -35,13 +35,23 @@ export class CestaService {
 
   // Agregar producto a la cesta
   agregarProducto(producto: any) {
-    const existe = this.cesta.find(item => item.id === producto.id);
-    if (existe) {
-      existe.cantidad += 1;
+    const cesta = this.obtenerCesta();
+  
+    // Verificamos si ya existe el mismo producto con misma talla y color
+    const existente = cesta.find(p =>
+      p.id === producto.id &&
+      p.tallaSeleccionada === producto.tallaSeleccionada &&
+      p.colorSeleccionado === producto.colorSeleccionado
+    );
+  
+    if (existente) {
+      existente.cantidad += 1;
     } else {
-      this.cesta.push({ ...producto, cantidad: 1 });
+      producto.cantidad = 1; // Aseguramos que siempre tenga cantidad
+      cesta.push(producto);
     }
-    this.guardarCesta(); // Guardar cambios en localStorage
+  
+    localStorage.setItem('cesta', JSON.stringify(cesta));
   }
 
   // Cambiar cantidad de un producto

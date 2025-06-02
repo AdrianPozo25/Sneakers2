@@ -1,0 +1,52 @@
+<div class="account-container">
+  <h2>👤 Mi cuenta</h2>
+
+  <div *ngIf="usuario; else cargando">
+    <p><strong>Nombre:</strong> {{ usuario.username }}</p>
+    <p><strong>Email:</strong> {{ usuario.email }}</p>
+    <p><strong>Registrado desde:</strong> Sin datos</p>
+  </div>
+
+  <ng-template #cargando>
+    <p><strong>Nombre:</strong> Cargando...</p>
+    <p><strong>Email:</strong> Cargando...</p>
+    <p><strong>Registrado desde:</strong> Sin datos</p>
+  </ng-template>
+
+  <div class="actions">
+    <button (click)="editarNombre()">Editar nombre</button>
+    <button (click)="cambiarContrasena()">Cambiar contraseña</button>
+  </div>
+
+  <div class="actividad">
+    <h3>🕓 Actividad reciente</h3>
+    <ul>
+      <li *ngFor="let item of actividadReciente">{{ item }}</li>
+    </ul>
+  </div>
+
+  <button class="logout" (click)="logout()">Cerrar sesión</button>
+</div>
+
+<!-- MODAL emergente -->
+<div class="modal" *ngIf="editandoNombre || editandoContrasena">
+  <div class="modal-content modal-animate">
+    <button class="close-button" (click)="cancelarCambios()">×</button>
+    <h3>Editar cuenta</h3>
+
+    <div *ngIf="editandoNombre">
+      <label>Nuevo nombre:</label>
+      <input [(ngModel)]="usuario.username" (input)="onInputChange()" />
+    </div>
+
+    <div *ngIf="editandoContrasena">
+      <label>Nueva contraseña:</label>
+      <input type="password" [(ngModel)]="nuevaContrasena" (input)="onInputChange()" />
+    </div>
+
+    <div class="modal-buttons">
+      <button (click)="guardarCambios()">Guardar cambios</button>
+      <button (click)="cancelarCambios()">Cancelar</button>
+    </div>
+  </div>
+</div>
