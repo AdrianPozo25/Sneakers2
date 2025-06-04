@@ -1,41 +1,49 @@
 <section class="cesta-container">
-    <h2>🛒 Tu Cesta</h2>
+  <h2>🛒 Tu Cesta</h2>
 
-    <!-- Si la cesta está vacía -->
-    <div *ngIf="productosCesta.length === 0" class="cesta-vacia">
-      <p>Tu cesta está vacía.</p>
-      <button class="btn-seguir" (click)="irAlCatalogo()">Seguir comprando</button>
-    </div>
+  <!-- Si la cesta está vacía -->
+  <div *ngIf="productosCesta.length === 0" class="cesta-vacia">
+    <p>Tu cesta está vacía.</p>
+    <button class="btn-seguir" (click)="irAlCatalogo()">Seguir comprando</button>
+  </div>
 
-    <!-- Si hay productos en la cesta -->
-    <div *ngIf="productosCesta.length > 0" class="cesta-productos">
-      <div class="producto" *ngFor="let producto of productosCesta">
-        <!-- Contenedor de la imagen -->
-        <div class="producto-imagen">
-          <img  [src]="producto.imagenes[0]" [alt]="producto.nombre" class="cesta-img"   loading="lazy">
-
-        </div>
-
-        <div class="info">
-          <h3>{{ producto.nombre }}</h3>
-          <p>{{ producto.precio }}€</p>
-          <p><strong>Talla:</strong> {{ producto.tallaSeleccionada || '—' }}</p>
-          <p><strong>Color:</strong> {{ producto.colorSeleccionado || '—' }}</p>
-          <div class="cantidad">
-            <button (click)="cambiarCantidad(producto.id, -1)">➖</button>
-            <span>{{ producto.cantidad }}</span>
-            <button (click)="cambiarCantidad(producto.id, 1)">➕</button>
-          </div>
-          <button class="btn-eliminar" (click)="eliminarProducto(producto.id)">🗑️ Eliminar</button>
-        </div>
-        
+  <!-- Si hay productos en la cesta -->
+  <div *ngIf="productosCesta.length > 0" class="cesta-productos">
+    <div class="producto" *ngFor="let producto of productosCesta">
+      <div class="producto-imagen">
+        <img [src]="producto.imagenes[0]" [alt]="producto.nombre" class="cesta-img" loading="lazy">
       </div>
 
-      <!-- Total y botón de vaciar cesta -->
-      <div class="cesta-total">
-        <h3>Total: {{ obtenerTotal() }}€</h3>
-        <button class="btn-vaciar" (click)="vaciarCesta()">Vaciar Cesta</button>
-        <button class="btn-pagar" (click)="pagar()">Pagar</button>
+      <div class="info">
+        <h3>{{ producto.nombre }}</h3>
+        <p>{{ producto.precio }}€</p>
+        <p><strong>Talla:</strong> {{ producto.tallaSeleccionada || '—' }}</p>
+        <p><strong>Color:</strong> {{ producto.colorSeleccionado || '—' }}</p>
+        <div class="cantidad">
+          <button (click)="cambiarCantidad(producto.id, -1)">➖</button>
+          <span>{{ producto.cantidad }}</span>
+          <button (click)="cambiarCantidad(producto.id, 1)">➕</button>
+        </div>
+        <button class="btn-eliminar" (click)="eliminarProducto(producto.id)">🗑️ Eliminar</button>
       </div>
     </div>
+
+    <!-- Total, vaciar cesta, pagar -->
+    <div class="cesta-total">
+      <h3>Total: {{ obtenerTotal() }}€</h3>
+      <button class="btn-vaciar" (click)="vaciarCesta()">Vaciar Cesta</button>
+      <button class="btn-pagar" (click)="pagar()">Pagar</button>
+    </div>
+  </div>
+
+  <!-- MODAL de pago -->
+  <div class="modal-backdrop" *ngIf="mostrarModalPago">
+    <div class="modal-pago">
+      <div class="modal-header">
+        <h3>Finaliza tu pago</h3>
+        <button class="cerrar" (click)="cerrarModalPago()">✖</button>
+      </div>
+      <div id="paypal-button-container" style="margin-top: 1rem;"></div>
+    </div>
+  </div>
 </section>

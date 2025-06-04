@@ -1,4 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
+import Swal from 'sweetalert2';
+
 
 @Component({
   standalone: false,
@@ -6,7 +8,7 @@ import { Component, OnInit } from '@angular/core';
   templateUrl: './lanzamientos.component.html',
   styleUrls: ['./lanzamientos.component.css']
 })
-export class LanzamientosComponent implements OnInit {
+export class LanzamientosComponent {
   lanzamientos = [
     {
       nombre: 'Nike SB Dunk x Travis Scott',
@@ -22,7 +24,28 @@ export class LanzamientosComponent implements OnInit {
     }
   ];
 
-  constructor() {}
+  mostrarModal = false;
+  lanzamientoSeleccionado: any = null;
 
-  ngOnInit(): void {}
+  abrirConfirmacion(item: any) {
+    this.lanzamientoSeleccionado = item;
+    this.mostrarModal = true;
+  }
+
+  confirmarNotificacion() {
+    this.mostrarModal = false;
+    Swal.fire({
+    icon: 'success',
+    title: '¡Listo!',
+    text: `Te notificaremos cuando salga "${this.lanzamientoSeleccionado.nombre}".`,
+    confirmButtonColor: '#3085d6',
+    confirmButtonText: 'Aceptar'
+  });
+    this.lanzamientoSeleccionado = null;
+  }
+
+  cancelarNotificacion() {
+    this.mostrarModal = false;
+    this.lanzamientoSeleccionado = null;
+  }
 }

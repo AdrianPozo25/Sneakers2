@@ -11,6 +11,7 @@ import { LanzamientosComponent } from './pages/lanzamientos/lanzamientos.compone
 import { MiCuentaComponent } from './pages/mi-cuenta/mi-cuenta.component';
 
 
+
 const routes: Routes = [
   { path: '', component: HomeComponent },
   { path: 'catalogo', component: CatalogoComponent },

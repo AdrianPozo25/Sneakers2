@@ -28,7 +28,8 @@ import { MiCuentaComponent } from './mi-cuenta/mi-cuenta.component';
     RegisterComponent,
     DetallesProductoComponent,
     LanzamientosComponent,
-    MiCuentaComponent
+    MiCuentaComponent,
+    
   ],
   imports: [
     CommonModule,

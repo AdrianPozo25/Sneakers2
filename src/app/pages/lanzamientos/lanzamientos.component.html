@@ -1,3 +1,4 @@
+<!-- Lanzamientos -->
 <div class="lanzamientos-container">
   <h2>📦 Próximos lanzamientos</h2>
 
@@ -8,6 +9,17 @@
       <p>📅 Lanzamiento: {{ item.fecha }}</p>
       <p>💸 Precio estimado: {{ item.precio }}€</p>
     </div>
-    <button class="notificar-btn">Notificarme</button>
+    <button class="notificar-btn" (click)="abrirConfirmacion(item)">Notificarme</button>
+  </div>
+</div>
+
+<!-- Modal de confirmación -->
+<div class="modal-overlay" *ngIf="mostrarModal">
+  <div class="modal">
+    <h3>¿Deseas que te notifiquemos cuando salga "{{ lanzamientoSeleccionado?.nombre }}"?</h3>
+    <div class="modal-buttons">
+      <button class="si" (click)="confirmarNotificacion()">Sí</button>
+      <button class="no" (click)="cancelarNotificacion()">No</button>
+    </div>
   </div>
 </div>
