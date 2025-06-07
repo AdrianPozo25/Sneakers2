@@ -21,7 +21,6 @@ const routes: Routes = [
   {
     path: 'detalles/:id',
     component: DetallesProductoComponent,
-    data: { renderMode: 'default' } // 👈 Evita prerender en esta ruta
   },
   { path: 'login', component: LoginComponent },
   { path: 'mi-cuenta', component: MiCuentaComponent },
