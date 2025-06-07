@@ -18,12 +18,17 @@ const routes: Routes = [
   { path: 'contacta', component: ContactaComponent },
   { path: 'cesta', component: CestaComponent },
   { path: 'lanzamientos', component: LanzamientosComponent },
-  { path: 'detalles/:id', component: DetallesProductoComponent},
+  {
+    path: 'detalles/:id',
+    component: DetallesProductoComponent,
+    data: { renderMode: 'default' } // 👈 Evita prerender en esta ruta
+  },
   { path: 'login', component: LoginComponent },
-  {path: 'mi-cuenta', component:MiCuentaComponent},
+  { path: 'mi-cuenta', component: MiCuentaComponent },
   { path: 'register', component: RegisterComponent },
   { path: '**', redirectTo: '', pathMatch: 'full' }
 ];
+
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
