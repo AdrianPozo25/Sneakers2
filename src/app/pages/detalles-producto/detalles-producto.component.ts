@@ -253,7 +253,7 @@ seleccionarImagen(index: number) {
     this.transicionActiva = false;
   }, 300);
 
-  this.reiniciarAutoSlide(); // Reiniciar el auto-slide tras selección manual
+  this.reiniciarAutoSlide(); // Reiniciarel auto-slide tras selección manual
 }
 
 // Iniciar el auto-slide de imágenes

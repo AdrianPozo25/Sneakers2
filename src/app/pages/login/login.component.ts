@@ -29,7 +29,7 @@ export class LoginComponent {
     this.authService.login(credentials).subscribe(
       (res: any) => {
         if (res.status === 'success') {
-          this.authService.setSession(res.user); // ¡res.user!
+          this.authService.setSession(res.user); 
           this.router.navigate(['/home']);
         } else {
           this.errorMessage = res.message || 'Error al iniciar sesión.';

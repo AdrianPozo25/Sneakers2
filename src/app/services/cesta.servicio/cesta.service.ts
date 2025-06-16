@@ -11,14 +11,14 @@ export class CestaService {
     this.cargarCesta(); // Cargar la cesta cuando se inicializa el servicio
   }
 
-  // Guardar en localStorage (solo si está en el navegador)
+  // Guardar en localStorage 
   private guardarCesta() {
     if (isPlatformBrowser(this.platformId)) {
       localStorage.setItem('cesta', JSON.stringify(this.cesta));
     }
   }
 
-  // Cargar la cesta desde localStorage (solo si está en el navegador)
+  // Cargar la cesta desde localStorage 
   private cargarCesta() {
     if (isPlatformBrowser(this.platformId)) {
       const datosGuardados = localStorage.getItem('cesta');
@@ -37,7 +37,7 @@ export class CestaService {
   agregarProducto(producto: any) {
     const cesta = this.obtenerCesta();
   
-    // Verificamos si ya existe el mismo producto con misma talla y color
+    // se verifica si ya existe el mismo producto con misma talla y color
     const existente = cesta.find(p =>
       p.id === producto.id &&
       p.tallaSeleccionada === producto.tallaSeleccionada &&

@@ -11,7 +11,7 @@ import Swal from 'sweetalert2';
 })
 export class CestaComponent implements OnInit {
   productosCesta: any[] = [];
-  mostrarModalPago = false; // ✅ Esta línea va aquí, no dentro del decorador @Component
+  mostrarModalPago = false; 
 
   constructor(private cestaService: CestaService, private router: Router) {}
 
@@ -47,7 +47,7 @@ export class CestaComponent implements OnInit {
       setTimeout(() => {
         const paypalDiv = document.getElementById('paypal-button-container');
         if (paypalDiv) {
-          paypalDiv.innerHTML = ''; // limpia botón anterior
+          paypalDiv.innerHTML = ''; 
 
           // @ts-ignore
           paypal.Buttons({
